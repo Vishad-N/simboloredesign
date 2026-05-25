@@ -3,7 +3,7 @@ import Image from "next/image";
 const testimonials = [
   {
     quote:
-      "“Creatify completely transformed our brand identity. Their attention to detail and creative vision helped us double our engagement in just 3 months. Absolute magic!”",
+      "“Simbolo completely transformed our brand identity. Their attention to detail and creative vision helped us double our engagement in just 3 months. Absolute magic!”",
     name: "Sarah Jenkins",
     role: "CMO, Nutriyo",
     image:

@@ -3,6 +3,23 @@ import Link from "next/link";
 const services = [
   {
     number: "01",
+    slug: "digital-marketing",
+    title: "Digital Marketing",
+    items: ["Social Media Campaigns", "Paid Advertising", "Email Marketing"],
+    numberColor: "text-skyblue",
+    linkColor: "text-skyblue",
+    borderHover: "hover:border-skyblue/30",
+    bgBlob: "bg-skyblue/5",
+    bgBlobHover: "group-hover:bg-skyblue/20",
+    iconBg: "bg-gradient-to-br from-skyblue/20 to-skyblue/5",
+    iconColor: "text-skyblue",
+    dotColor: "bg-skyblue/50",
+    iconPath: "M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z",
+    iconPath2: "M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z",
+  },
+  {
+    number: "02",
+    slug: "brand-identity-design",
     title: "Brand Identity & Visual Design",
     items: ["Logo & Guidelines", "Print Media", "Stationery Design"],
     numberColor: "text-primary",
@@ -17,23 +34,9 @@ const services = [
       "M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01",
   },
   {
-    number: "02",
-    title: "Digital Marketing Assets",
-    items: ["Social Creatives", "Ad Campaigns", "Email Newsletters"],
-    numberColor: "text-skyblue",
-    linkColor: "text-skyblue",
-    borderHover: "hover:border-skyblue/30",
-    bgBlob: "bg-skyblue/5",
-    bgBlobHover: "group-hover:bg-skyblue/20",
-    iconBg: "bg-gradient-to-br from-skyblue/20 to-skyblue/5",
-    iconColor: "text-skyblue",
-    dotColor: "bg-skyblue/50",
-    iconPath: "M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z",
-    iconPath2: "M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z",
-  },
-  {
     number: "03",
-    title: "Motion & Video Production",
+    slug: "motion-video-production",
+    title: "Motion & Video Editing",
     items: ["Explainer Videos", "Video Editing", "Motion Posters"],
     numberColor: "text-purple",
     linkColor: "text-purple",
@@ -49,8 +52,9 @@ const services = [
   },
   {
     number: "04",
-    title: "UI/UX Design",
-    items: ["Website Layouts", "App Interfaces", "Landing Pages"],
+    slug: "web-design",
+    title: "Web Design",
+    items: ["Responsive Websites", "Landing Pages", "Conversion-Focused UI"],
     numberColor: "text-orange",
     linkColor: "text-orange",
     borderHover: "hover:border-orange/30",
@@ -64,8 +68,9 @@ const services = [
   },
   {
     number: "05",
-    title: "Advanced Image Services",
-    items: ["Photo Manipulation", "AI-Enhanced Visuals", "Product Styling"],
+    slug: "ecommerce",
+    title: "E-commerce",
+    items: ["Shopify Stores", "Product Marketing", "Conversion Optimization"],
     numberColor: "text-primary",
     linkColor: "text-primary",
     borderHover: "hover:border-primary/30",
@@ -138,7 +143,7 @@ export default function Services() {
                 ))}
               </ul>
               <Link
-                href="#"
+                href={`/${service.slug}`}
                 className={`${service.linkColor} font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all`}
               >
                 Learn More <span aria-hidden="true">&rarr;</span>

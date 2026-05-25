@@ -1,10 +1,11 @@
-﻿"use client";
+"use client";
 
 import { useRef, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import adsIcon from "../../public/ads.png";
 import ecommerceIcon from "../../public/Ecommerce.png";
-import logoDesignIcon from "../../public/logo-design.png";
+import productDesignIcon from "../../public/product-design.png";
 import motionIcon from "../../public/motion.png";
 import prIcon from "../../public/PR.png";
 import socialMediaIcon from "../../public/social-media.png";
@@ -13,15 +14,15 @@ import videographyIcon from "../../public/videography.png";
 import webDevIcon from "../../public/web-dev.png";
 
 const floatingIcons = [
-  { src: socialMediaIcon, alt: "Social Media", label: "Social Media", delay: "0s", duration: "6s" },
-  { src: adsIcon, alt: "Ads & Analytics", label: "Ads & Analytics", delay: "0.8s", duration: "7s" },
-  { src: ecommerceIcon, alt: "Ecommerce", label: "Ecommerce", delay: "1.5s", duration: "5.5s" },
-  { src: webDevIcon, alt: "Web Development", label: "Web Dev", delay: "0.5s", duration: "7.5s" },
-  { src: prIcon, alt: "Public Relations", label: "PR", delay: "1.8s", duration: "6.2s" },
-  { src: logoDesignIcon, alt: "Logo Design", label: "Logo Design", delay: "0.3s", duration: "7s" },
-  { src: videoEditingIcon, alt: "Video Editing", label: "Video Editing", delay: "2.5s", duration: "5s" },
-  { src: videographyIcon, alt: "Videography", label: "Videography", delay: "1.2s", duration: "6s" },
-  { src: motionIcon, alt: "Motion Graphics", label: "Motion Graphics", delay: "2s", duration: "6.5s" },
+  { src: socialMediaIcon, alt: "Social Media", label: "Social Media", delay: "0s", duration: "6s", slug: "social-media" },
+  { src: adsIcon, alt: "Ads & Analytics", label: "Ads & Analytics", delay: "0.8s", duration: "7s", slug: "ads-analytics" },
+  { src: ecommerceIcon, alt: "Ecommerce", label: "Ecommerce", delay: "1.5s", duration: "5.5s", slug: "ecommerce" },
+  { src: webDevIcon, alt: "Web Development", label: "Web Dev", delay: "0.5s", duration: "7.5s", slug: "web-development" },
+  { src: prIcon, alt: "Public Relations", label: "PR", delay: "1.8s", duration: "6.2s", slug: "pr" },
+  { src: productDesignIcon, alt: "Product Design", label: "Product Design", delay: "0.3s", duration: "7s", slug: "product-design" },
+  { src: videoEditingIcon, alt: "Video Editing", label: "Video Editing", delay: "2.5s", duration: "5s", slug: "video-editing" },
+  { src: videographyIcon, alt: "Videography", label: "Videography", delay: "1.2s", duration: "6s", slug: "videography" },
+  { src: motionIcon, alt: "Motion Graphics", label: "Motion Graphics", delay: "2s", duration: "6.5s", slug: "motion-graphics" },
 ];
 
 function getOrbitPositions(count: number) {
@@ -52,7 +53,7 @@ export default function Hero() {
     video.muted = true;
     const playPromise = video.play();
     if (playPromise) {
-      playPromise.catch(() => {});
+      playPromise.catch(() => { });
     }
   }, []);
 
@@ -140,9 +141,10 @@ export default function Hero() {
 
         {/* Floating service icons in circular orbit */}
         {floatingIcons.map((icon, i) => (
-          <div
+          <Link
+            href={`/${icon.slug}`}
             key={icon.alt}
-            className="absolute z-20 floating-icon flex flex-col items-center gap-1.5 hover:scale-110 transition-transform duration-300 cursor-pointer -translate-x-1/2 -translate-y-1/2"
+            className="absolute z-20 floating-icon flex flex-col items-center gap-1.5 hover:scale-110 transition-transform duration-300 cursor-pointer -translate-x-1/2 -translate-y-1/2 group"
             style={{
               top: positions[i].top,
               left: positions[i].left,
@@ -150,7 +152,7 @@ export default function Hero() {
               animationDuration: icon.duration,
             }}
           >
-            <div className="drop-shadow-lg">
+            <div className="drop-shadow-lg transition-transform duration-300 group-hover:-translate-y-1">
               <Image
                 src={icon.src}
                 alt={icon.alt}
@@ -159,10 +161,10 @@ export default function Hero() {
                 className="object-contain select-none pointer-events-none"
               />
             </div>
-            <span className="text-xs font-semibold text-dark/70 bg-white/60 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm whitespace-nowrap">
+            <span className="text-xs font-semibold text-dark/70 bg-white/60 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm whitespace-nowrap transition-colors duration-300 group-hover:bg-white group-hover:text-primary">
               {icon.label}
             </span>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

@@ -1,12 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "About Us", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Process", href: "#process" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/#contact" },
+  { label: "Services", href: "/#services" },
+  { label: "Portfolio", href: "/#portfolio" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export default function Navbar() {
@@ -14,11 +14,16 @@ export default function Navbar() {
     <header className="fixed top-4 left-0 w-full z-50 px-4 md:px-8">
       <nav className="max-w-[1320px] mx-auto glass-nav rounded-full px-6 py-3 md:py-4 flex items-center justify-between shadow-sm">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-skyblue flex items-center justify-center text-white font-bold font-heading text-xl shadow-glow-primary">
-            C
-          </div>
+          <Image
+            src="/assets/logo1.png"
+            alt="Simbolo Logo"
+            width={40}
+            height={40}
+            className="w-10 h-10 object-contain"
+            priority
+          />
           <div className="hidden md:block leading-none">
-            <h1 className="font-heading font-bold text-dark text-lg">Creatify</h1>
+            <h1 className="font-heading font-bold text-dark text-lg">Simbolo</h1>
             <p className="text-[10px] text-soft font-medium uppercase tracking-wider">
               Digital Marketing Agency
             </p>
@@ -40,7 +45,7 @@ export default function Navbar() {
 
         <div>
           <Link
-            href="#contact"
+            href="/contact"
             className="group flex items-center gap-2 bg-primary hover:bg-[#13ab6e] text-white px-6 py-2.5 rounded-full font-medium text-sm transition-all shadow-glow-primary hover:-translate-y-0.5"
           >
             Let&apos;s Talk

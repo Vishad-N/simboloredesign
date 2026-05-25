@@ -6,7 +6,7 @@
   --color-purple: #8b5cf6;
   --color-orange: #ff9f43;
   --color-dark: #0f172a;
-  --color-soft: #64748b;
+  --color-soft: #475569;
   --color-bglight: #f8fbff;
 
   --font-heading: "Plus Jakarta Sans", sans-serif;
@@ -123,3 +123,19 @@ body {
     transform: translateY(6px) rotate(-1deg);
   }
 }
+
+/* Line clamp utilities for blog cards */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+

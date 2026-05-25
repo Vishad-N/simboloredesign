@@ -27,7 +27,7 @@ export default function CTA() {
               Start Your Project
             </Link>
             <a
-              href="tel:+1234567890"
+              href="tel:+918982948199"
               className="bg-dark/10 hover:bg-dark/20 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center gap-2 whitespace-nowrap"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
