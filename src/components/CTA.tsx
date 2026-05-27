@@ -11,12 +11,11 @@ export default function CTA() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
           <div className="text-white text-center lg:text-left max-w-2xl">
             <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight drop-shadow-sm">
-              Ready to Elevate <br />
+              Ready to Grow <br />
               Your Brand?
             </h2>
             <p className="text-white/90 text-xl font-medium">
-              Let&apos;s create something amazing together. Partner with us to scale your
-              digital presence today.
+              Let's build something great. Contact us today to start your next project.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-4">

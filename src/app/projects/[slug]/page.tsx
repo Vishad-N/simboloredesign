@@ -7,7 +7,6 @@ import ProjectProcess from "@/components/project/ProjectProcess";
 import ProjectResults from "@/components/project/ProjectResults";
 import NextProjectCTA from "@/components/project/NextProjectCTA";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 interface ProjectPageProps {
   params: Promise<{
@@ -60,8 +59,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <ProjectResults results={project.results} />
       
       <NextProjectCTA nextProject={project.nextProject} />
-      
-      <Footer />
     </main>
   );
 }

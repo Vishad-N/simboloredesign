@@ -7,7 +7,7 @@ const industries: Industry[] = [
   {
     title: "Hospitality & Hotels",
     badge: "Guest Experience",
-    image: "/img1.jpg",
+    image: "/ind1.jpg",
     points: [
       "Guest experience campaigns",
       "Booking-focused creatives",
@@ -18,7 +18,7 @@ const industries: Industry[] = [
   {
     title: "Luxury Real Estate",
     badge: "High Intent",
-    image: "/img2.jpg",
+    image: "/ind2.jpg",
     points: [
       "Premium property promotions",
       "Cinematic visual storytelling",
@@ -29,7 +29,7 @@ const industries: Industry[] = [
   {
     title: "Fashion & Apparel",
     badge: "Desire",
-    image: "/img3.jpg",
+    image: "/ind3.jpg",
     points: [
       "Editorial-style campaigns",
       "Influencer-focused creatives",
@@ -40,7 +40,7 @@ const industries: Industry[] = [
   {
     title: "Healthcare",
     badge: "Trust",
-    image: "/img4.jpg",
+    image: "/ind4.jpg",
     points: [
       "Trust-focused branding",
       "Patient communication design",
@@ -51,7 +51,7 @@ const industries: Industry[] = [
   {
     title: "Education",
     badge: "Clarity",
-    image: "/img5.jpg",
+    image: "/ind5.jpg",
     points: [
       "Modern institutional branding",
       "Student engagement campaigns",
@@ -62,7 +62,7 @@ const industries: Industry[] = [
   {
     title: "Technology",
     badge: "Innovation",
-    image: "/img6.jpg",
+    image: "/ind6.jpg",
     points: [
       "Product marketing visuals",
       "Futuristic UI/UX systems",

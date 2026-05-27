@@ -61,8 +61,7 @@ export default function Footer() {
             </div>
 
             <p className="text-soft mb-8 max-w-sm leading-relaxed">
-              We are a premium digital marketing & creative agency dedicated to building
-              impactful digital experiences that drive real growth.
+              We are a creative agency helping brands grow with modern digital experiences.
             </p>
 
             {/* Social Icons */}

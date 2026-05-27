@@ -134,7 +134,7 @@ export default function InquiryPopup() {
             onKeyDown={keepFocusInside}
             className="relative w-full max-w-[620px] overflow-hidden rounded-[36px] border border-white/15 bg-dark p-5 text-white shadow-[0_36px_120px_-38px_rgba(15,23,42,0.95)] outline-none sm:p-7 md:p-9"
           >
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_5%,rgba(22,196,127,0.24),transparent_34%),radial-gradient(circle_at_88%_14%,rgba(77,168,255,0.24),transparent_36%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_42%)]" />
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_5%,rgba(61,199,203,0.24),transparent_34%),radial-gradient(circle_at_88%_14%,rgba(77,168,255,0.24),transparent_36%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_42%)]" />
             <div className="pointer-events-none absolute inset-[1px] rounded-[35px] border border-white/10" />
 
             <button
@@ -151,19 +151,19 @@ export default function InquiryPopup() {
 
             <div className="relative pr-14">
               <span className="mb-4 inline-flex rounded-full border border-primary/25 bg-primary/10 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
-                Start Something Great
+                Contact Us
               </span>
               <h2
                 id="inquiry-popup-title"
                 className="font-heading text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl"
               >
-                Let&apos;s Talk Business.
+                Start a Project.
               </h2>
               <p
                 id="inquiry-popup-description"
                 className="mt-4 max-w-lg text-sm leading-7 text-white/68 sm:text-base"
               >
-                Share a few details and we&apos;ll get back to you within 24 working hours.
+                Send us a message and we'll get back to you soon.
               </p>
             </div>
 

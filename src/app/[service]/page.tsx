@@ -55,7 +55,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
             {serviceData.overview}
           </p>
           <div className="mt-10">
-            <Link href="/contact" className="inline-block bg-primary hover:bg-[#13ab6e] text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-glow-primary hover:-translate-y-1">
+            <Link href="/contact" className="inline-block bg-primary hover:bg-[#35b5b8] text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-glow-primary hover:-translate-y-1">
               Start Your Project
             </Link>
           </div>

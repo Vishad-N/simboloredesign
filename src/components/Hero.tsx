@@ -14,35 +14,88 @@ import videographyIcon from "../../public/videography.png";
 import webDevIcon from "../../public/web-dev.png";
 
 const floatingIcons = [
-  { src: socialMediaIcon, alt: "Social Media", label: "Social Media", delay: "0s", duration: "6s", slug: "social-media" },
-  { src: adsIcon, alt: "Ads & Analytics", label: "Ads & Analytics", delay: "0.8s", duration: "7s", slug: "ads-analytics" },
-  { src: ecommerceIcon, alt: "Ecommerce", label: "Ecommerce", delay: "1.5s", duration: "5.5s", slug: "ecommerce" },
-  { src: webDevIcon, alt: "Web Development", label: "Web Dev", delay: "0.5s", duration: "7.5s", slug: "web-development" },
-  { src: prIcon, alt: "Public Relations", label: "PR", delay: "1.8s", duration: "6.2s", slug: "pr" },
-  { src: productDesignIcon, alt: "Product Design", label: "Product Design", delay: "0.3s", duration: "7s", slug: "product-design" },
-  { src: videoEditingIcon, alt: "Video Editing", label: "Video Editing", delay: "2.5s", duration: "5s", slug: "video-editing" },
-  { src: videographyIcon, alt: "Videography", label: "Videography", delay: "1.2s", duration: "6s", slug: "videography" },
-  { src: motionIcon, alt: "Motion Graphics", label: "Motion Graphics", delay: "2s", duration: "6.5s", slug: "motion-graphics" },
+  {
+    src: socialMediaIcon,
+    alt: "Social Media",
+    label: "Social Media",
+    delay: "0s",
+    duration: "6s",
+    slug: "social-media",
+    posClass: "top-[12%] left-1/2 sm:top-[16%] sm:left-[35%] lg:top-[20%] lg:left-[50%]",
+  },
+  {
+    src: adsIcon,
+    alt: "Ads & Analytics",
+    label: "Ads & Analytics",
+    delay: "0.8s",
+    duration: "7s",
+    slug: "ads-analytics",
+    posClass: "top-[20%] left-[78%] sm:top-[26%] sm:left-[75%] lg:top-[28%] lg:left-[73%]",
+  },
+  {
+    src: ecommerceIcon,
+    alt: "Ecommerce",
+    label: "Ecommerce",
+    delay: "1.5s",
+    duration: "5.5s",
+    slug: "ecommerce",
+    posClass: "top-[38%] left-[88%] sm:top-[44%] sm:left-[85%] lg:top-[48%] lg:left-[80%]",
+  },
+  {
+    src: webDevIcon,
+    alt: "Web Development",
+    label: "Web Dev",
+    delay: "0.5s",
+    duration: "7.5s",
+    slug: "web-development",
+    posClass: "top-[58%] left-[88%] sm:top-[64%] sm:left-[82%] lg:top-[68%] lg:left-[77%]",
+  },
+  {
+    src: prIcon,
+    alt: "Public Relations",
+    label: "PR",
+    delay: "1.8s",
+    duration: "6.2s",
+    slug: "pr",
+    posClass: "top-[78%] left-[75%] sm:top-[80%] sm:left-[70%] lg:top-[86%] lg:left-[60%]",
+  },
+  {
+    src: productDesignIcon,
+    alt: "Product Design",
+    label: "Product Design",
+    delay: "0.3s",
+    duration: "7s",
+    slug: "product-design",
+    posClass: "top-[88%] left-[45%] sm:top-[88%] sm:left-[45%] lg:top-[86%] lg:left-[40%]",
+  },
+  {
+    src: videoEditingIcon,
+    alt: "Video Editing",
+    label: "Video Editing",
+    delay: "2.5s",
+    duration: "5s",
+    slug: "video-editing",
+    posClass: "top-[78%] left-[22%] sm:top-[80%] sm:left-[25%] lg:top-[68%] lg:left-[23%]",
+  },
+  {
+    src: videographyIcon,
+    alt: "Videography",
+    label: "Videography",
+    delay: "1.2s",
+    duration: "6s",
+    slug: "videography",
+    posClass: "top-[58%] left-[12%] sm:top-[60%] sm:left-[15%] lg:top-[48%] lg:left-[20%]",
+  },
+  {
+    src: motionIcon,
+    alt: "Motion Graphics",
+    label: "Motion Graphics",
+    delay: "2s",
+    duration: "6.5s",
+    slug: "motion-graphics",
+    posClass: "top-[38%] left-[15%] sm:top-[42%] sm:left-[18%] lg:top-[28%] lg:left-[27%]",
+  },
 ];
-
-function getOrbitPositions(count: number) {
-  const positions: { top: string; left: string }[] = [];
-  const radiusX = 31;
-  const radiusY = 34;
-  const centerX = 50;
-  const centerY = 54;
-  const startAngle = -90;
-  for (let i = 0; i < count; i++) {
-    const angle = startAngle + (360 / count) * i;
-    const rad = (angle * Math.PI) / 180;
-    const x = centerX + radiusX * Math.cos(rad);
-    const y = centerY + radiusY * Math.sin(rad);
-    positions.push({ top: `${y}%`, left: `${x}%` });
-  }
-  return positions;
-}
-
-const positions = getOrbitPositions(floatingIcons.length);
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -140,14 +193,12 @@ export default function Hero() {
         </div>
 
         {/* Floating service icons in circular orbit */}
-        {floatingIcons.map((icon, i) => (
+        {floatingIcons.map((icon) => (
           <Link
             href={`/${icon.slug}`}
             key={icon.alt}
-            className="absolute z-20 floating-icon flex flex-col items-center gap-1.5 hover:scale-110 transition-transform duration-300 cursor-pointer -translate-x-1/2 -translate-y-1/2 group"
+            className={`absolute z-20 floating-icon flex flex-col items-center gap-1 sm:gap-1.5 transition-transform duration-300 cursor-pointer -translate-x-1/2 -translate-y-1/2 group scale-75 sm:scale-90 lg:scale-100 hover:scale-110 ${icon.posClass}`}
             style={{
-              top: positions[i].top,
-              left: positions[i].left,
               animationDelay: icon.delay,
               animationDuration: icon.duration,
             }}
@@ -161,7 +212,7 @@ export default function Hero() {
                 className="object-contain select-none pointer-events-none"
               />
             </div>
-            <span className="text-xs font-semibold text-dark/70 bg-white/60 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm whitespace-nowrap transition-colors duration-300 group-hover:bg-white group-hover:text-primary">
+            <span className="text-[11px] sm:text-sm lg:text-base font-semibold text-dark/70 bg-white/60 backdrop-blur-sm px-3 py-2 sm:px-4 sm:py-3 rounded-full shadow-sm max-w-[110px] sm:max-w-[160px] lg:max-w-none text-center whitespace-normal leading-tight transition-colors duration-300 group-hover:bg-white group-hover:text-primary">
               {icon.label}
             </span>
           </Link>

@@ -88,11 +88,10 @@ export default function Portfolio() {
               Our Work
             </span>
             <h2 className="font-heading text-4xl md:text-5xl font-extrabold text-dark mb-4 tracking-tight">
-              Work That Speaks <br />
-              For Itself
+              Our Recent Work
             </h2>
             <p className="text-soft text-lg">
-              A glimpse of creativity, strategy, and results we&apos;ve delivered.
+              See how we've helped other brands grow.
             </p>
           </div>
           <div className="flex gap-4 items-center">

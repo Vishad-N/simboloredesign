@@ -40,10 +40,10 @@ export default function Testimonials() {
 
       <div className="max-w-[1320px] mx-auto text-center mb-16 relative z-10">
         <span className="inline-block bg-white text-purple font-bold text-xs px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider shadow-sm border border-purple/10">
-          Clients Love Us
+          Reviews
         </span>
         <h2 className="font-heading text-4xl md:text-5xl font-extrabold text-dark mb-4 tracking-tight">
-          What Our Clients Say
+          Client Reviews
         </h2>
       </div>
 

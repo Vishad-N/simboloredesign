@@ -93,11 +93,10 @@ export default function Services() {
             What We Do
           </span>
           <h2 className="font-heading text-4xl md:text-5xl font-extrabold text-dark mb-4 tracking-tight">
-            End-to-End Creative <br />& Digital Solutions
+            Our Services
           </h2>
           <p className="text-soft text-lg">
-            Everything your brand needs to stand out, scale up, and succeed in the modern
-            digital landscape.
+            We provide everything you need to grow your brand and succeed online.
           </p>
         </div>
 

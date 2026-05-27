@@ -106,7 +106,7 @@ export default function ProjectsWall() {
   const glowBackground = useTransform(
     [glowX, glowY],
     ([latestX, latestY]) =>
-      `radial-gradient(450px circle at ${latestX}% ${latestY}%, rgba(77,168,255,0.12), rgba(22,196,127,0.08) 25%, transparent 60%)`,
+      `radial-gradient(450px circle at ${latestX}% ${latestY}%, rgba(77,168,255,0.12), rgba(61,199,203,0.08) 25%, transparent 60%)`,
   );
 
   function followPointer(event: PointerEvent<HTMLElement>) {
@@ -173,7 +173,7 @@ export default function ProjectsWall() {
               Back to portfolio
             </button>
             <span className="mb-5 block text-xs font-bold uppercase tracking-[0.24em] text-primary">
-              Selected creative systems
+              Our Projects
             </span>
             <h1 className="font-heading text-6xl font-extrabold leading-none tracking-tight text-dark sm:text-7xl md:text-8xl lg:text-[9.5rem]">
               Projects
@@ -181,8 +181,7 @@ export default function ProjectsWall() {
           </div>
 
           <div className="max-w-md border-l border-dark/10 pl-5 text-base leading-8 text-soft md:text-lg">
-            A floating wall of campaigns, identities, and digital products shaped to make
-            attention turn into trust.
+            A collection of our best work across different industries.
           </div>
         </motion.div>
 
@@ -207,11 +206,11 @@ export default function ProjectsWall() {
           className="mt-16 flex flex-col gap-5 rounded-[36px] border border-white bg-white/70 p-6 shadow-sm md:flex-row md:items-center md:justify-between md:p-8"
         >
           <p className="max-w-2xl font-heading text-2xl font-bold leading-tight text-dark md:text-3xl">
-            Need a project wall built around your next launch?
+            Ready to start your next project?
           </p>
           <Link
             href="/#contact"
-            className="inline-flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-white shadow-md transition-transform hover:-translate-y-0.5 hover:bg-[#13ab6e] focus-visible:outline-none"
+            className="inline-flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-white shadow-md transition-transform hover:-translate-y-0.5 hover:bg-[#35b5b8] focus-visible:outline-none"
           >
             Start a project
             <span aria-hidden="true">&rarr;</span>

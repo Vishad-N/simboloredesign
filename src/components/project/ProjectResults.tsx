@@ -18,7 +18,7 @@ export default function ProjectResults({ results }: ProjectResultsProps) {
   return (
     <section className="py-24 px-4 md:px-8 relative overflow-hidden">
       <div className="absolute inset-0 bg-dark -z-20" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(22,196,127,0.1)_0%,transparent_70%)] -z-10" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(61,199,203,0.1)_0%,transparent_70%)] -z-10" />
 
       <div className="max-w-[1320px] mx-auto text-center">
         <motion.div

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-primary: #16c47f;
+  --color-primary: #3dc7cb;
   --color-skyblue: #4da8ff;
   --color-purple: #8b5cf6;
   --color-orange: #ff9f43;
@@ -13,7 +13,7 @@
   --font-body: "Inter", sans-serif;
 
   --shadow-soft: 0 20px 50px -12px rgba(0, 0, 0, 0.05);
-  --shadow-glow-primary: 0 10px 30px -10px rgba(22, 196, 127, 0.5);
+  --shadow-glow-primary: 0 10px 30px -10px rgba(61, 199, 203, 0.5);
   --shadow-glow-blue: 0 10px 30px -10px rgba(77, 168, 255, 0.5);
 
   --animate-float: float 6s ease-in-out infinite;
@@ -62,8 +62,8 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
 }
 
-.text-gradient-green {
-  background: linear-gradient(135deg, #16c47f 0%, #0fa368 100%);
+.text-gradient-primary {
+  background: linear-gradient(135deg, #3dc7cb 0%, #2eb5b9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -93,7 +93,7 @@ body {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: #16c47f;
+  background-color: #3dc7cb;
   transition: width 0.3s ease;
 }
 .nav-link:hover::after {
