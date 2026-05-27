@@ -21,7 +21,7 @@ const floatingIcons = [
     delay: "0s",
     duration: "6s",
     slug: "social-media",
-    posClass: "top-[12%] left-1/2 sm:top-[16%] sm:left-[35%] lg:top-[20%] lg:left-[50%]",
+    posClass: "top-[18%] left-[40%] sm:top-[16%] sm:left-[35%] lg:top-[20%] lg:left-[50%]",
   },
   {
     src: adsIcon,
@@ -44,7 +44,7 @@ const floatingIcons = [
   {
     src: webDevIcon,
     alt: "Web Development",
-    label: "Web Dev",
+    label: "Web Development",
     delay: "0.5s",
     duration: "7.5s",
     slug: "web-development",
@@ -209,7 +209,9 @@ export default function Hero() {
                 alt={icon.alt}
                 width={132}
                 height={132}
-                className="object-contain select-none pointer-events-none"
+                className={`object-contain select-none pointer-events-none ${
+                  icon.slug === "web-development" ? "scale-[1.25] lg:scale-[1.05]" : ""
+                }`}
               />
             </div>
             <span className="text-[11px] sm:text-sm lg:text-base font-semibold text-dark/70 bg-white/60 backdrop-blur-sm px-3 py-2 sm:px-4 sm:py-3 rounded-full shadow-sm max-w-[110px] sm:max-w-[160px] lg:max-w-none text-center whitespace-normal leading-tight transition-colors duration-300 group-hover:bg-white group-hover:text-primary">

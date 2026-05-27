@@ -37,20 +37,20 @@ export const servicesData: ServiceData[] = [
   {
     slug: "digital-marketing",
     title: "Digital Marketing",
-    shortDescription: "Viral campaigns and strategic grid architecture.",
+    shortDescription: "Elevate Your Brand with Simbolo Multimedia",
     icon: "/social-media.png",
-    overview: "Social media isn't just about posting; it's about building a cult following. We design platform-native content sequences that demand attention, spark conversation, and drive measurable growth.",
+    overview: "Supercharge your online presence, attract high-quality leads, and convert clicks into loyal customers with our data-driven digital marketing strategies.",
     benefits: [
-      "Growth-focused organic campaigns",
-      "Comprehensive content strategy and calendaring",
-      "Viral-ready creative assets and reels",
-      "Engagement systems that build community"
+      "Results-Driven Strategies",
+      "All-in-One Creative & Technical Team",
+      "Data-Backed Decisions",
+      "Transparent Reporting"
     ],
     process: [
-      { step: "01", title: "Audit & Strategy", description: "Analyzing your current presence and defining the playbook." },
-      { step: "02", title: "Content Creation", description: "Producing premium assets tailored to each platform." },
-      { step: "03", title: "Distribution", description: "Publishing at peak times with optimized copy." },
-      { step: "04", title: "Community Management", description: "Fostering relationships and driving engagement." }
+      { step: "01", title: "Search Engine Optimization (SEO)", description: "Get found by customers exactly when they are searching for you. We optimize your website to rank on the first page of Google, driving organic, free traffic to your business." },
+      { step: "02", title: "Pay-Per-Click Advertising (Google & Meta Ads)", description: "Stop waiting for results. Get instant visibility, high-quality traffic, and immediate leads with targeted ad campaigns across Google, Facebook, and Instagram." },
+      { step: "03", title: "Social Media Management (SMM)", description: "Turn your social media profiles into powerful brand assets. We create engaging content calendars, design eye-catching visuals, and build an active community around your brand." },
+      { step: "04", title: "Content Marketing & Copywriting", description: "Content is what connects your brand to human emotions. We write highly persuasive ad copies, engaging blogs, and clear website content that drives action." }
     ],
     caseStudy: {
       title: "Aura Lifestyle",
@@ -61,20 +61,20 @@ export const servicesData: ServiceData[] = [
   {
     slug: "web-development",
     title: "Web Development",
-    shortDescription: "High-performance, award-winning digital experiences.",
+    shortDescription: "Build a Stunning Online Home",
     icon: "/web-dev.png",
-    overview: "Your website is your digital flagship. We build premium, responsive web applications that blend stunning award-winning aesthetics with rigorous performance optimization and SEO fundamentals.",
+    overview: "Turn your website into your 24/7 salesperson. We design beautiful, secure, and fast-loading websites that convert random visitors into paying customers",
     benefits: [
-      "Premium responsive architecture",
-      "Modern UI/UX with smooth micro-interactions",
-      "Deep technical SEO optimization",
-      "Lightning-fast performance builds"
+      "Completely Stress-Free Setup",
+      "High-Converting Premium Layouts",
+      "Built for Speed & Sales",
+      "Continuous Long-Term Support"
     ],
     process: [
-      { step: "01", title: "Discovery", description: "Understanding your technical needs and user flows." },
-      { step: "02", title: "UX/UI Design", description: "Prototyping the interface and visual design system." },
-      { step: "03", title: "Development", description: "Writing clean, scalable, and secure code." },
-      { step: "04", title: "Testing & Launch", description: "Rigorous QA before pushing your site live." }
+      { step: "01", title: "Custom Domain Name", description: "Get a professional web address (like .com or .in) that perfectly matches your company name and builds instant brand authority online." },
+      { step: "02", title: "Free SSL Certificate", description: "Protect your website and user data. We install a secure HTTPS padlock on your address bar, boosting your customer trust and improving your Google search rankings." },
+      { step: "03", title: "Super-Fast Cloud Hosting", description: "Say goodbye to slow loading times. Your website is hosted on high-performance, secure cloud servers to ensure maximum uptime and lightning-fast speeds." },
+      { step: "04", title: "1 Professional Business Email ID", description: "Stop using generic Gmail addresses for business. Get a dedicated corporate email ID that looks professional and builds stronger trust with your customers." }
     ],
     caseStudy: {
       title: "Elevate SaaS Platform",
@@ -109,20 +109,20 @@ export const servicesData: ServiceData[] = [
   {
     slug: "motion-video-production",
     title: "Motion & Video Editing",
-    shortDescription: "Pacing, narrative, and cinematic polish.",
+    shortDescription: "Stop Scrolling. Start Engaging",
     icon: "/video-editing.png",
-    overview: "Editing is where the story is truly written. We take raw footage and sculpt it into compelling narratives with cinematic transitions, perfect pacing, and professional color grading.",
+    overview: "Bring your brand to life, capture short attention spans, and turn viewers into buyers with high-energy videos and breathtaking motion graphics",
     benefits: [
-      "High-retention social media reels",
-      "Premium commercial edits",
-      "Cinematic transitions and color grading",
-      "Impactful brand storytelling"
+      "High-Hook Editing Style",
+      "Platform-Optimized Formats",
+      "Professional Motion Graphics",
+      "Seamless Visual Storytelling"
     ],
     process: [
-      { step: "01", title: "Ingest & Log", description: "Reviewing all footage and organizing the timeline." },
-      { step: "02", title: "Rough Cut", description: "Establishing the narrative structure and pacing." },
-      { step: "03", title: "Refinement", description: "Adding transitions, graphics, and effects." },
-      { step: "04", title: "Color & Audio", description: "Final color grading and sound mixing." }
+      { step: "01", title: "UGC Video Editing (User Generated Content)", description: "Raw, authentic, and highly relatable. We take raw smartphone footage from creators or your team and edit it into high-converting social proof videos with engaging captions and cuts." },
+      { step: "02", title: "Premium Motion Graphics", description: "Explain complex ideas beautifully. We use custom animations, moving shapes, kinetic typography, and animated vector art to make your promotional content look modern and dynamic." },
+      { step: "03", title: "Clear Explainer Videos", description: "Break down your software, product, or service into simple steps. We combine clear scripts, smooth screen recordings, and graphics to create easy-to-understand 60-second walkthroughs." },
+      { step: "04", title: "Cinematic Video Production", description: "Give your brand a high-end, premium feel. We apply professional color grading, deep sound design, and cinematic pacing to corporate films, event highlights, and product launches." }
     ],
     caseStudy: {
       title: "Nike Summer Campaign",
@@ -181,9 +181,9 @@ export const servicesData: ServiceData[] = [
   {
     slug: "ecommerce",
     title: "E-commerce",
-    shortDescription: "High-converting storefronts that drive sales.",
+    shortDescription: "Build an Online Store That Sells 24/7",
     icon: "/Ecommerce.png",
-    overview: "We build digital storefronts engineered for conversion. From seamless checkout flows to persuasive product pages, we design ecommerce experiences that turn browsers into buyers.",
+    overview: "Transform your business into a powerful online brand. We don’t just create websites; we build high-converting digital storefronts that make shopping easy for your customers and growing business simple for you. From smooth product displays to secure payment setups, we handle everything.",
     benefits: [
       "Conversion rate optimization (CRO)",
       "Custom Shopify/Commerce development",
@@ -191,10 +191,10 @@ export const servicesData: ServiceData[] = [
       "Persuasive product page design"
     ],
     process: [
-      { step: "01", title: "Architecture", description: "Structuring the catalog and user journey." },
-      { step: "02", title: "Design", description: "Crafting a brand-aligned, high-trust interface." },
-      { step: "03", title: "Development", description: "Building the custom theme and functionality." },
-      { step: "04", title: "Optimization", description: "Post-launch testing to maximize conversion rates." }
+      { step: "01", title: "Store Setup & Development", description: "From domain registration and secure hosting to complete Shopify, WooCommerce, and marketplace seller account setup, we provide everything needed to launch and grow your online store smoothly and professionally." },
+      { step: "02", title: "End-to-End Store Management", description: "We handle your complete e-commerce operations, including account management, inventory tracking, order processing, and product listings, ensuring a smooth, organized, and stress-free selling experience across all platforms." },
+      { step: "03", title: "Design & Visual Branding", description: "We create visually stunning e-commerce designs, including high-converting websites, promotional banners, premium packaging, and realistic product mockups that strengthen your brand and attract more customers." },
+      { step: "04", title: "Growth & Marketing Services", description: "We help grow your e-commerce business through high-performing ad campaigns, powerful SEO optimization, and persuasive product descriptions that attract customers and increase conversions." }
     ],
     caseStudy: {
       title: "Artisan Coffee Roasters",
@@ -229,20 +229,20 @@ export const servicesData: ServiceData[] = [
   {
     slug: "brand-identity-design",
     title: "Brand Identity & Visual Design",
-    shortDescription: "Visual identities that demand attention.",
+    shortDescription: "Shape Your Brand's Future.",
     icon: "/product-design.png",
-    overview: "A brand is more than a logo; it's an experience. We build comprehensive visual identity systems and brand strategies that position you as a premium leader in your market.",
+    overview: "Make an unforgettable first impression, stand out from your competitors, and build deep trust with professional design that tells your unique story.",
     benefits: [
-      "Visual identity systems",
-      "Brand strategy and positioning",
-      "Logo systems and guidelines",
-      "Premium brand experiences"
+      "Striking Visual Storytelling",
+      "Consistency Across All Platforms",
+      "Clean, Modern Aesthetics",
+      "Flawless Technical Execution"
     ],
     process: [
-      { step: "01", title: "Discovery", description: "Uncovering your core values, audience, and market positioning." },
-      { step: "02", title: "Concept", description: "Developing mood boards and initial visual directions." },
-      { step: "03", title: "Design", description: "Crafting the logo, typography, and color systems." },
-      { step: "04", title: "Guidelines", description: "Delivering a comprehensive brand book for consistency." }
+      { step: "01", title: "Logo & Brand Guidelines", description: "Your logo is the face of your business. We design memorable logos and build complete brand books—defining your exact brand colors, typography, and iconography so your team always stays on brand." },
+      { step: "02", title: "Print Media", description: "Bring your brand into the physical world with high-impact marketing materials. We design professional business cards, corporate brochures, promotional banners, and massive, eye-catching outdoor hoardings." },
+      { step: "03", title: "Stationery Design", description: "Establish authority in every single interaction. We create premium, cohesive corporate stationery, including formal letterheads, custom envelopes, presentation folders, and clean internal company documents." },
+      { step: "04", title: "Digital Assets & Layout Design", description: "Keep your online platforms looking sharp and professional. We design modern social media templates, website banners, digital newsletters, and clean multi-channel marketing layouts that drive engagement." }
     ],
     caseStudy: {
       title: "Lumina Luxury Real Estate",

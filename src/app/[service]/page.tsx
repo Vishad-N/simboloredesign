@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getServiceBySlug, servicesData } from "@/data/services";
 import CTA from "@/components/CTA";
+import Hero from "@/components/Hero";
 
 export function generateStaticParams() {
   return servicesData.map((service) => ({ service: service.slug }));
@@ -35,8 +36,18 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
     notFound();
   }
 
+  const targetSlugs = [
+    "brand-identity-design",
+    "digital-marketing",
+    "motion-video-production",
+    "web-design",
+    "ecommerce"
+  ];
+  const isTargetPage = targetSlugs.includes(slug);
+
   return (
     <div className="bg-bglight overflow-hidden">
+      {isTargetPage && <Hero />}
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 px-4 md:px-8">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white to-bglight" />
@@ -108,30 +119,32 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
       </section>
 
       {/* Case Study Feature */}
-      <section className="py-24 px-4 md:px-8 bg-bglight">
-        <div className="max-w-[1320px] mx-auto">
-          <div className="bg-white rounded-[40px] p-8 md:p-16 border border-black/5 shadow-xl shadow-black/5 overflow-hidden relative">
-            <div className="flex flex-col lg:flex-row gap-12 items-center relative z-10">
-              <div className="lg:w-1/2 space-y-6">
-                <div className="inline-block bg-primary/10 text-primary font-bold text-xs px-3 py-1.5 rounded-full tracking-widest uppercase">
-                  Featured Case Study
+      {!isTargetPage && (
+        <section className="py-24 px-4 md:px-8 bg-bglight">
+          <div className="max-w-[1320px] mx-auto">
+            <div className="bg-white rounded-[40px] p-8 md:p-16 border border-black/5 shadow-xl shadow-black/5 overflow-hidden relative">
+              <div className="flex flex-col lg:flex-row gap-12 items-center relative z-10">
+                <div className="lg:w-1/2 space-y-6">
+                  <div className="inline-block bg-primary/10 text-primary font-bold text-xs px-3 py-1.5 rounded-full tracking-widest uppercase">
+                    Featured Case Study
+                  </div>
+                  <h2 className="font-heading text-3xl md:text-5xl font-extrabold text-dark">{serviceData.caseStudy.title}</h2>
+                  <div className="w-20 h-1 bg-gradient-to-r from-primary to-skyblue rounded-full" />
+                  <p className="text-2xl font-medium text-dark/80 leading-snug">{serviceData.caseStudy.result}</p>
+                  <Link href="/#portfolio" className="inline-flex items-center gap-2 font-bold text-primary hover:text-dark transition-colors">
+                    View Full Portfolio &rarr;
+                  </Link>
                 </div>
-                <h2 className="font-heading text-3xl md:text-5xl font-extrabold text-dark">{serviceData.caseStudy.title}</h2>
-                <div className="w-20 h-1 bg-gradient-to-r from-primary to-skyblue rounded-full" />
-                <p className="text-2xl font-medium text-dark/80 leading-snug">{serviceData.caseStudy.result}</p>
-                <Link href="/#portfolio" className="inline-flex items-center gap-2 font-bold text-primary hover:text-dark transition-colors">
-                  View Full Portfolio &rarr;
-                </Link>
-              </div>
-              <div className="lg:w-1/2 w-full">
-                <div className="aspect-video relative rounded-3xl overflow-hidden shadow-2xl">
-                  <Image src={serviceData.caseStudy.image} alt="Case study" fill className="object-cover" />
+                <div className="lg:w-1/2 w-full">
+                  <div className="aspect-video relative rounded-3xl overflow-hidden shadow-2xl">
+                    <Image src={serviceData.caseStudy.image} alt="Case study" fill className="object-cover" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <CTA />
     </div>

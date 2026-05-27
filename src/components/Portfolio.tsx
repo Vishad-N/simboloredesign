@@ -94,38 +94,40 @@ export default function Portfolio() {
               See how we've helped other brands grow.
             </p>
           </div>
-          <div className="flex gap-4 items-center">
-            <button 
-              onClick={() => scroll("left")}
-              disabled={!canScrollLeft}
-              aria-label="Previous projects"
-              className={`w-12 h-12 rounded-full bg-white flex items-center justify-center transition-all ${
-                canScrollLeft 
-                  ? "text-dark hover:text-primary shadow-sm hover:shadow-md cursor-pointer" 
-                  : "text-dark/30 shadow-none cursor-not-allowed"
-              }`}
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button 
-              onClick={() => scroll("right")}
-              disabled={!canScrollRight}
-              aria-label="Next projects"
-              className={`w-12 h-12 rounded-full bg-white flex items-center justify-center transition-all ${
-                canScrollRight 
-                  ? "text-dark hover:text-primary shadow-sm hover:shadow-md cursor-pointer" 
-                  : "text-dark/30 shadow-none cursor-not-allowed"
-              }`}
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+          <div className="flex flex-col sm:flex-row gap-5 sm:gap-4 items-start sm:items-center w-full md:w-auto mt-4 md:mt-0">
+            <div className="flex gap-4">
+              <button 
+                onClick={() => scroll("left")}
+                disabled={!canScrollLeft}
+                aria-label="Previous projects"
+                className={`w-12 h-12 rounded-full bg-white flex items-center justify-center transition-all shrink-0 ${
+                  canScrollLeft 
+                    ? "text-dark hover:text-primary shadow-sm hover:shadow-md cursor-pointer" 
+                    : "text-dark/30 shadow-none cursor-not-allowed"
+                }`}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button 
+                onClick={() => scroll("right")}
+                disabled={!canScrollRight}
+                aria-label="Next projects"
+                className={`w-12 h-12 rounded-full bg-white flex items-center justify-center transition-all shrink-0 ${
+                  canScrollRight 
+                    ? "text-dark hover:text-primary shadow-sm hover:shadow-md cursor-pointer" 
+                    : "text-dark/30 shadow-none cursor-not-allowed"
+                }`}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
             <Link
               href="/projects"
-              className="hidden lg:flex bg-dark hover:bg-black text-white px-6 py-3 rounded-full font-medium transition-all ml-4"
+              className="flex w-full sm:w-auto justify-center items-center bg-dark hover:bg-black text-white px-6 py-3 rounded-full font-medium transition-all sm:ml-4 text-sm md:text-base shrink-0"
             >
               View All Projects
             </Link>
