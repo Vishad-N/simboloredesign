@@ -4,12 +4,84 @@ export type ServiceData = {
   shortDescription: string;
   icon: string;
   overview: string;
-  benefits: string[];
+  benefits: ({ title: string; description: string } | string)[];
   process: { step: string; title: string; description: string }[];
   caseStudy: { title: string; result: string; image: string };
 };
 
 export const servicesData: ServiceData[] = [
+  {
+    slug: "social-media",
+    title: "Social Media Marketing",
+    shortDescription: "Drive Brand Engagement and Instagram Growth.",
+    icon: "/social-media.png",
+    overview: "Build a loyal community and accelerate your Instagram growth with our tailored social media marketing services. We craft data-driven content strategies that maximize brand engagement and turn followers into loyal customers.",
+    benefits: [
+      {
+        title: "Instagram Growth Strategy",
+        description: "Expand your reach rapidly with targeted campaigns designed to attract and retain highly engaged followers."
+      },
+      {
+        title: "High Brand Engagement",
+        description: "Foster a passionate community around your brand with interactive, relatable, and shareable daily content."
+      },
+      {
+        title: "Tailored Content Strategy",
+        description: "Deploy a consistent, premium content calendar that aligns perfectly with your brand voice and marketing goals."
+      },
+      {
+        title: "Comprehensive Social Media Marketing",
+        description: "Leverage multi-platform organic and paid strategies to dominate your niche and outshine your competitors."
+      }
+    ],
+    process: [
+      { step: "01", title: "Audience Analysis", description: "Deep diving into your target demographic to understand their behaviors, preferences, and pain points." },
+      { step: "02", title: "Content Strategy & Planning", description: "Developing a robust content calendar focusing on Instagram growth and maximum brand engagement." },
+      { step: "03", title: "Creation & Distribution", description: "Producing premium social media assets and publishing them at peak times for optimal visibility." },
+      { step: "04", title: "Monitoring & Optimization", description: "Tracking performance metrics and refining our approach to continuously boost your social media marketing ROI." }
+    ],
+    caseStudy: {
+      title: "Viral Brand Engagement",
+      result: "Increased organic Instagram growth by 250% and tripled daily brand engagement within 4 months.",
+      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1200&q=80"
+    }
+  },
+  {
+    slug: "video-editing",
+    title: "Professional Video Editing",
+    shortDescription: "Cinematic Editing for Impactful Short Form Content.",
+    icon: "/video-editing.png",
+    overview: "Capture your audience's attention instantly with our professional video editing services. From fast-paced Reels editing to premium cinematic editing, we transform raw footage into high-performing short form content.",
+    benefits: [
+      {
+        title: "Professional Video Editing",
+        description: "Elevate your brand with flawless cuts, dynamic transitions, and pristine audio synchronization."
+      },
+      {
+        title: "Engaging Reels Editing",
+        description: "Maximize your reach on Instagram and TikTok with fast-paced, trend-driven edits that hook viewers instantly."
+      },
+      {
+        title: "Impactful Short Form Content",
+        description: "Repurpose long-form videos into bite-sized, high-retention clips optimized for modern social media algorithms."
+      },
+      {
+        title: "Premium Cinematic Editing",
+        description: "Give your brand a high-end feel with professional color grading, deep sound design, and cinematic storytelling."
+      }
+    ],
+    process: [
+      { step: "01", title: "Footage Ingestion", description: "Organizing your raw files and identifying the most impactful moments for your short form content." },
+      { step: "02", title: "Rough Cut & Pacing", description: "Establishing the narrative flow and ensuring the Reels editing hooks the viewer in the first three seconds." },
+      { step: "03", title: "Cinematic Editing & Grading", description: "Applying professional color grading, motion graphics, and visual effects for a premium finish." },
+      { step: "04", title: "Final Polish & Export", description: "Perfecting the sound design and delivering optimized files ready for native platform upload." }
+    ],
+    caseStudy: {
+      title: "Short Form Content Mastery",
+      result: "Generated over 10 million organic views through strategic Reels editing and cinematic visual storytelling.",
+      image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80"
+    }
+  },
   {
     slug: "motion-graphics",
     title: "Motion Graphics",
@@ -41,10 +113,22 @@ export const servicesData: ServiceData[] = [
     icon: "/social-media.png",
     overview: "Supercharge your online presence, attract high-quality leads, and convert clicks into loyal customers with our data-driven digital marketing strategies.",
     benefits: [
-      "Results-Driven Strategies",
-      "All-in-One Creative & Technical Team",
-      "Data-Backed Decisions",
-      "Transparent Reporting"
+      {
+        title: "Results-Driven Strategies",
+        description: "Focus on measurable growth with campaigns engineered to maximize your return on ad spend."
+      },
+      {
+        title: "All-in-One Team",
+        description: "Benefit from a seamless workflow where creative designers and technical marketers work in perfect sync."
+      },
+      {
+        title: "Data-Backed Decisions",
+        description: "Eliminate guesswork with continuous optimization based on deep analytics and real-time performance data."
+      },
+      {
+        title: "Transparent Reporting",
+        description: "Stay completely informed with clear, jargon-free dashboards showing exactly how your budget is performing."
+      }
     ],
     process: [
       { step: "01", title: "Search Engine Optimization (SEO)", description: "Get found by customers exactly when they are searching for you. We optimize your website to rank on the first page of Google, driving organic, free traffic to your business." },
@@ -59,16 +143,28 @@ export const servicesData: ServiceData[] = [
     }
   },
   {
-    slug: "web-development",
+    slug: "web-design",
     title: "Web Development",
     shortDescription: "Build a Stunning Online Home",
     icon: "/web-dev.png",
     overview: "Turn your website into your 24/7 salesperson. We design beautiful, secure, and fast-loading websites that convert random visitors into paying customers",
     benefits: [
-      "Completely Stress-Free Setup",
-      "High-Converting Premium Layouts",
-      "Built for Speed & Sales",
-      "Continuous Long-Term Support"
+      {
+        title: "Stress-Free Setup",
+        description: "We handle domains, hosting, and technical configurations so you can focus entirely on your business."
+      },
+      {
+        title: "High-Converting Layouts",
+        description: "Engage visitors with premium, responsive designs tailored specifically to turn traffic into paying customers."
+      },
+      {
+        title: "Built for Speed",
+        description: "Ensure maximum retention with lightweight, optimized code running on lightning-fast cloud architecture."
+      },
+      {
+        title: "Long-Term Support",
+        description: "Enjoy peace of mind with continuous updates, security monitoring, and dedicated technical assistance."
+      }
     ],
     process: [
       { step: "01", title: "Custom Domain Name", description: "Get a professional web address (like .com or .in) that perfectly matches your company name and builds instant brand authority online." },
@@ -113,10 +209,22 @@ export const servicesData: ServiceData[] = [
     icon: "/video-editing.png",
     overview: "Bring your brand to life, capture short attention spans, and turn viewers into buyers with high-energy videos and breathtaking motion graphics",
     benefits: [
-      "High-Hook Editing Style",
-      "Platform-Optimized Formats",
-      "Professional Motion Graphics",
-      "Seamless Visual Storytelling"
+      {
+        title: "High-Hook Editing",
+        description: "Capture attention in the crucial first three seconds with fast-paced, engaging visual hooks."
+      },
+      {
+        title: "Platform-Optimized",
+        description: "Receive native formats perfectly sized and paced for Instagram Reels, TikTok, and YouTube Shorts."
+      },
+      {
+        title: "Professional Graphics",
+        description: "Enhance your footage with premium motion elements, kinetic typography, and smooth transitions."
+      },
+      {
+        title: "Seamless Storytelling",
+        description: "Build strong emotional connections with your audience through cinematic pacing and precise color grading."
+      }
     ],
     process: [
       { step: "01", title: "UGC Video Editing (User Generated Content)", description: "Raw, authentic, and highly relatable. We take raw smartphone footage from creators or your team and edit it into high-converting social proof videos with engaging captions and cuts." },
@@ -185,10 +293,22 @@ export const servicesData: ServiceData[] = [
     icon: "/Ecommerce.png",
     overview: "Transform your business into a powerful online brand. We don’t just create websites; we build high-converting digital storefronts that make shopping easy for your customers and growing business simple for you. From smooth product displays to secure payment setups, we handle everything.",
     benefits: [
-      "Conversion rate optimization (CRO)",
-      "Custom Shopify/Commerce development",
-      "Seamless payment and fulfillment integrations",
-      "Persuasive product page design"
+      {
+        title: "Conversion rate optimization (CRO)",
+        description: "Maximize your sales with data-driven design adjustments that turn more visitors into paying customers."
+      },
+      {
+        title: "Custom Shopify/Commerce development",
+        description: "Launch a robust, tailored e-commerce platform built to handle high traffic and complex inventories seamlessly."
+      },
+      {
+        title: "Seamless payment and fulfillment integrations",
+        description: "Ensure a smooth checkout experience with flawless integrations of leading payment gateways and shipping systems."
+      },
+      {
+        title: "Persuasive product page design",
+        description: "Showcase your items beautifully with layouts designed to highlight value and drive immediate action."
+      }
     ],
     process: [
       { step: "01", title: "Store Setup & Development", description: "From domain registration and secure hosting to complete Shopify, WooCommerce, and marketplace seller account setup, we provide everything needed to launch and grow your online store smoothly and professionally." },
@@ -233,10 +353,22 @@ export const servicesData: ServiceData[] = [
     icon: "/product-design.png",
     overview: "Make an unforgettable first impression, stand out from your competitors, and build deep trust with professional design that tells your unique story.",
     benefits: [
-      "Striking Visual Storytelling",
-      "Consistency Across All Platforms",
-      "Clean, Modern Aesthetics",
-      "Flawless Technical Execution"
+      {
+        title: "Visual Storytelling",
+        description: "Communicate your unique value proposition through a striking and memorable visual identity."
+      },
+      {
+        title: "Platform Consistency",
+        description: "Maintain a unified, professional presence across web, social media, print, and physical touchpoints."
+      },
+      {
+        title: "Modern Aesthetics",
+        description: "Stand out as a premium leader in your industry with clean, minimalist, and timeless design."
+      },
+      {
+        title: "Technical Execution",
+        description: "Receive pixel-perfect, scalable brand assets and comprehensive guidelines for flawless deployment."
+      }
     ],
     process: [
       { step: "01", title: "Logo & Brand Guidelines", description: "Your logo is the face of your business. We design memorable logos and build complete brand books—defining your exact brand colors, typography, and iconography so your team always stays on brand." },
@@ -275,7 +407,7 @@ export const servicesData: ServiceData[] = [
     }
   },
   {
-    slug: "web-design",
+    slug: "web-development",
     title: "Web Design",
     shortDescription: "Frictionless interfaces for maximum engagement.",
     icon: "/web-dev.png",

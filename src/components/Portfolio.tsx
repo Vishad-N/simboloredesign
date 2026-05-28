@@ -16,8 +16,7 @@ const projects = [
   },
   {
     slug: "product-photography",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "/product-photography.jpg",
     category: "Product Photography",
     name: "LC Gluta Glow",
     color: "text-skyblue",
@@ -25,8 +24,7 @@ const projects = [
   },
   {
     slug: "content-creation-editing",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "/content.jpg",
     category: "Content Creation & Editing",
     name: "Educational Series",
     color: "text-purple",
@@ -34,8 +32,7 @@ const projects = [
   },
   {
     slug: "graphic-design-real-estate",
-    image:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "/graphic-design.jpg",
     category: "Graphic Design & Real Estate",
     name: "Eco-Farmhouses",
     color: "text-orange",
