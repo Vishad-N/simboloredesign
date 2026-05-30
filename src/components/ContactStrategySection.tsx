@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { type FormEvent } from "react";
+import MagneticWrapper from "@/components/ui/MagneticWrapper";
+import FloatingArrow from "@/components/ui/FloatingArrow";
 
 const contactDetails = [
   {
@@ -254,14 +256,16 @@ export default function ContactStrategySection() {
               </label>
             </div>
 
-            <motion.button
-              type="submit"
-              whileHover={{ y: -3 }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
-              className="mt-1 min-h-16 w-full rounded-[22px] bg-gradient-to-r from-primary to-skyblue px-6 py-4 font-heading text-base font-extrabold text-white shadow-glow-primary transition-shadow hover:shadow-glow-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-4 focus-visible:ring-offset-white"
-            >
-              Send Request via WhatsApp <span aria-hidden="true">&rarr;</span>
-            </motion.button>
+            <MagneticWrapper glowColor="primary" roundedClass="rounded-[22px]" className="mt-1 w-full block">
+              <motion.button
+                type="submit"
+                whileHover={{ y: -3 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+                className="group min-h-16 w-full rounded-[22px] bg-gradient-to-r from-primary to-skyblue px-6 py-4 font-heading text-base font-extrabold text-white shadow-glow-primary transition-shadow hover:shadow-glow-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-4 focus-visible:ring-offset-white"
+              >
+                Send Request via WhatsApp <FloatingArrow />
+              </motion.button>
+            </MagneticWrapper>
           </form>
         </motion.div>
       </motion.div>

@@ -11,6 +11,7 @@ import {
   type Variants
 } from "framer-motion";
 import { type PointerEvent } from "react";
+import FloatingArrow from "@/components/ui/FloatingArrow";
 
 export type ShowcaseProject = {
   title: string;
@@ -149,7 +150,7 @@ export default function FloatingProjectCard({ project, index }: FloatingProjectC
             className="mt-auto inline-flex w-fit items-center gap-2 rounded-full bg-dark px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 hover:bg-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
           >
             View
-            <span aria-hidden="true">&rarr;</span>
+            <FloatingArrow />
           </Link>
         </div>
       </motion.div>

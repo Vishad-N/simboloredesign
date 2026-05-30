@@ -10,6 +10,7 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
+import FloatingArrow from "@/components/ui/FloatingArrow";
 import { useLayoutEffect, useMemo, useRef, useState, type PointerEvent } from "react";
 
 type GalleryCategory =
@@ -213,8 +214,8 @@ function GalleryFrame({ frame, index }: { frame: CampaignFrame; index: number })
           <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-white/80 font-light">
             {frame.description}
           </p>
-          <span className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 text-[13px] font-bold uppercase tracking-wide text-dark transition-transform duration-300 ease-out group-hover:translate-x-1">
-            View campaign <span aria-hidden="true">&rarr;</span>
+          <span className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 text-[13px] font-bold uppercase tracking-wide text-dark transition-transform duration-300 ease-out">
+            View campaign <FloatingArrow />
           </span>
         </div>
       </motion.div>

@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import MagneticWrapper from "@/components/ui/MagneticWrapper";
+import FloatingArrow from "@/components/ui/FloatingArrow";
 
 export default function AboutCTA() {
   return (
@@ -48,25 +50,29 @@ export default function AboutCTA() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <Link 
-              href="/contact"
-              className="group relative inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-dark px-10 py-5 rounded-full font-bold text-lg transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_60px_rgba(255,255,255,0.4)] hover:-translate-y-1"
-            >
-              Start Your Project
-              <svg
-                className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            <MagneticWrapper glowColor="white">
+              <Link 
+                href="/contact"
+                className="group relative inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-dark px-10 py-5 rounded-full font-bold text-lg transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_60px_rgba(255,255,255,0.4)] hover:-translate-y-1 block"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
-            </Link>
+                Start Your Project
+                <FloatingArrow>
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </FloatingArrow>
+              </Link>
+            </MagneticWrapper>
           </motion.div>
         </motion.div>
       </div>

@@ -1,9 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import MagneticWrapper from "@/components/ui/MagneticWrapper";
 
 export default function CTA() {
   return (
     <section className="py-12 px-4 md:px-8 relative z-20">
+      {/* Ambient Background Lighting */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] max-w-4xl bg-primary/20 blur-[140px] -z-10 rounded-full pointer-events-none" />
+      
       <div className="max-w-[1320px] mx-auto bg-gradient-to-r from-primary to-skyblue rounded-[40px] p-10 md:p-16 lg:p-20 relative overflow-hidden shadow-glow-primary">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/10 rounded-full blur-3xl -z-10 translate-x-1/3 -translate-y-1/3" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-black/5 rounded-full blur-2xl -z-10 -translate-x-1/4 translate-y-1/4" />
@@ -19,26 +23,30 @@ export default function CTA() {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-4">
-            <Link
-              href="#contact"
-              className="bg-white text-dark hover:bg-gray-50 px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 whitespace-nowrap"
-            >
-              Start Your Project
-            </Link>
-            <a
-              href="tel:+918982948199"
-              className="bg-dark/10 hover:bg-dark/20 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center gap-2 whitespace-nowrap"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                />
-              </svg>
-              Call Us
-            </a>
+            <MagneticWrapper glowColor="white">
+              <Link
+                href="#contact"
+                className="bg-white text-dark hover:bg-gray-50 px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 whitespace-nowrap block"
+              >
+                Start Your Project
+              </Link>
+            </MagneticWrapper>
+            <MagneticWrapper glowColor="primary">
+              <a
+                href="tel:+918982948199"
+                className="bg-dark/10 hover:bg-dark/20 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center gap-2 whitespace-nowrap block"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                Call Us
+              </a>
+            </MagneticWrapper>
           </div>
         </div>
 

@@ -38,7 +38,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-white pt-24 pb-8 border-t border-gray-100">
+    <footer className="bg-white pt-24 pb-8 border-t border-gray-100 relative z-10">
       <div className="max-w-[1320px] mx-auto px-4 md:px-8">
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">

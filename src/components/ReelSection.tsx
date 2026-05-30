@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import ReelCard, { type Reel } from "@/components/ReelCard";
+import FloatingArrow from "@/components/ui/FloatingArrow";
 
 const reels: Reel[] = [
   {
@@ -76,10 +77,10 @@ export default function ReelSection() {
 
           <Link
             href="#"
-            className="inline-flex w-fit items-center gap-2 rounded-full bg-dark px-6 py-3 font-semibold text-white shadow-[0_18px_40px_-22px_rgba(15,23,42,0.65)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-4 focus-visible:ring-offset-bglight"
+            className="group inline-flex w-fit items-center gap-2 rounded-full bg-dark px-6 py-3 font-semibold text-white shadow-[0_18px_40px_-22px_rgba(15,23,42,0.65)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-4 focus-visible:ring-offset-bglight"
           >
             View All Reels
-            <span aria-hidden="true">&rarr;</span>
+            <FloatingArrow />
           </Link>
         </motion.div>
 

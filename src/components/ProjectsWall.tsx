@@ -13,6 +13,8 @@ import { useState, type PointerEvent } from "react";
 import FloatingProjectCard, {
   type ShowcaseProject,
 } from "@/components/FloatingProjectCard";
+import MagneticWrapper from "@/components/ui/MagneticWrapper";
+import FloatingArrow from "@/components/ui/FloatingArrow";
 
 const projects: ShowcaseProject[] = [
   {
@@ -208,13 +210,15 @@ export default function ProjectsWall() {
           <p className="max-w-2xl font-heading text-2xl font-bold leading-tight text-dark md:text-3xl">
             Ready to start your next project?
           </p>
-          <Link
-            href="/#contact"
-            className="inline-flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-white shadow-md transition-transform hover:-translate-y-0.5 hover:bg-[#35b5b8] focus-visible:outline-none"
-          >
-            Start a project
-            <span aria-hidden="true">&rarr;</span>
-          </Link>
+          <MagneticWrapper glowColor="primary">
+            <Link
+              href="/#contact"
+              className="group inline-flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-white shadow-md transition-transform hover:-translate-y-0.5 hover:bg-[#35b5b8] focus-visible:outline-none block"
+            >
+              Start a project
+              <FloatingArrow />
+            </Link>
+          </MagneticWrapper>
         </motion.div>
       </div>
     </motion.main>

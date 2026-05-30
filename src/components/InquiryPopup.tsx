@@ -2,6 +2,8 @@
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from "react";
+import MagneticWrapper from "@/components/ui/MagneticWrapper";
+import FloatingArrow from "@/components/ui/FloatingArrow";
 
 const popupSessionKey = "simbolo-inquiry-popup-shown";
 
@@ -132,17 +134,17 @@ export default function InquiryPopup() {
             transition={{ duration: reduceMotion ? 0 : 0.38, ease: "easeOut" }}
             onMouseDown={(event) => event.stopPropagation()}
             onKeyDown={keepFocusInside}
-            className="relative w-full max-w-[620px] overflow-hidden rounded-[36px] border border-white/15 bg-dark p-5 text-white shadow-[0_36px_120px_-38px_rgba(15,23,42,0.95)] outline-none sm:p-7 md:p-9"
+            className="relative w-full max-w-[500px] overflow-hidden rounded-[32px] border border-white/15 bg-dark p-4 text-white shadow-[0_36px_120px_-38px_rgba(15,23,42,0.95)] outline-none sm:p-5 md:p-7"
           >
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_5%,rgba(61,199,203,0.24),transparent_34%),radial-gradient(circle_at_88%_14%,rgba(77,168,255,0.24),transparent_36%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_42%)]" />
-            <div className="pointer-events-none absolute inset-[1px] rounded-[35px] border border-white/10" />
+            <div className="pointer-events-none absolute inset-[1px] rounded-[31px] border border-white/10" />
 
             <button
               ref={closeButtonRef}
               type="button"
               onClick={() => setIsOpen(false)}
               aria-label="Close inquiry form"
-              className="absolute right-5 top-5 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white/80 shadow-sm backdrop-blur transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:bg-white/15 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70"
+              className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white/80 shadow-sm backdrop-blur transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:bg-white/15 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70"
             >
               <svg aria-hidden="true" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18 18 6M6 6l12 12" />
@@ -150,26 +152,26 @@ export default function InquiryPopup() {
             </button>
 
             <div className="relative pr-14">
-              <span className="mb-4 inline-flex rounded-full border border-primary/25 bg-primary/10 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
+              <span className="mb-3 inline-flex rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] text-primary">
                 Contact Us
               </span>
               <h2
                 id="inquiry-popup-title"
-                className="font-heading text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl"
+                className="font-heading text-2xl font-extrabold leading-tight tracking-tight text-white sm:text-3xl md:text-4xl"
               >
                 Start a Project.
               </h2>
               <p
                 id="inquiry-popup-description"
-                className="mt-4 max-w-lg text-sm leading-7 text-white/68 sm:text-base"
+                className="mt-3 max-w-lg text-xs leading-6 text-white/68 sm:text-sm"
               >
                 Send us a message and we'll get back to you soon.
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="relative mt-7 grid gap-3.5 sm:grid-cols-2">
+            <form onSubmit={handleSubmit} className="relative mt-5 grid gap-3 sm:grid-cols-2">
               {fields.map((field) => (
-                <label key={field.id} htmlFor={field.id} className="grid gap-2 text-sm font-semibold text-white/84">
+                <label key={field.id} htmlFor={field.id} className="grid gap-1.5 text-xs font-semibold text-white/84 sm:text-sm">
                   <span>
                     {field.label}
                     {field.required && <span aria-hidden="true"> *</span>}
@@ -180,30 +182,32 @@ export default function InquiryPopup() {
                     type={field.type}
                     required={field.required}
                     autoComplete={field.autoComplete}
-                    className="h-13 w-full rounded-2xl border border-white/12 bg-white/[0.09] px-4 text-base text-white shadow-inner outline-none transition placeholder:text-white/35 focus:border-primary/60 focus:bg-white/[0.12] focus:ring-2 focus:ring-primary/25"
+                    className="h-11 w-full rounded-xl border border-white/12 bg-white/[0.09] px-3.5 text-sm text-white shadow-inner outline-none transition placeholder:text-white/35 focus:border-primary/60 focus:bg-white/[0.12] focus:ring-2 focus:ring-primary/25"
                   />
                 </label>
               ))}
 
               <label
                 htmlFor="inquiry-help"
-                className="grid gap-2 text-sm font-semibold text-white/84 sm:col-span-2"
+                className="grid gap-1.5 text-xs font-semibold text-white/84 sm:col-span-2 sm:text-sm"
               >
                 <span>What can we help with?</span>
                 <textarea
                   id="inquiry-help"
                   name="message"
                   rows={3}
-                  className="min-h-28 w-full resize-none rounded-[24px] border border-white/12 bg-white/[0.09] px-4 py-3 text-base text-white shadow-inner outline-none transition placeholder:text-white/35 focus:border-primary/60 focus:bg-white/[0.12] focus:ring-2 focus:ring-primary/25"
+                  className="min-h-24 w-full resize-none rounded-2xl border border-white/12 bg-white/[0.09] px-3.5 py-2.5 text-sm text-white shadow-inner outline-none transition placeholder:text-white/35 focus:border-primary/60 focus:bg-white/[0.12] focus:ring-2 focus:ring-primary/25"
                 />
               </label>
 
-              <button
-                type="submit"
-                className="mt-2 min-h-14 w-full rounded-2xl bg-gradient-to-r from-primary to-skyblue px-6 py-4 font-heading text-sm font-extrabold tracking-[0.18em] text-white shadow-glow-primary transition-all hover:-translate-y-0.5 hover:shadow-glow-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-dark sm:col-span-2"
-              >
-                SEND INQUIRY <span aria-hidden="true">&rarr;</span>
-              </button>
+              <MagneticWrapper glowColor="primary" roundedClass="rounded-xl" className="mt-1 w-full sm:col-span-2">
+                <button
+                  type="submit"
+                  className="group min-h-12 w-full rounded-xl bg-gradient-to-r from-primary to-skyblue px-5 py-3 font-heading text-xs font-extrabold tracking-[0.18em] text-white shadow-glow-primary transition-all hover:-translate-y-0.5 hover:shadow-glow-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-dark block"
+                >
+                  SEND INQUIRY <FloatingArrow><span aria-hidden="true">&rarr;</span></FloatingArrow>
+                </button>
+              </MagneticWrapper>
             </form>
           </motion.div>
         </motion.div>

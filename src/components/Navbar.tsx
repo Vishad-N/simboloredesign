@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import MagneticWrapper from "@/components/ui/MagneticWrapper";
+import FloatingArrow from "@/components/ui/FloatingArrow";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -51,25 +53,29 @@ export default function Navbar() {
           </ul>
 
           <div className="flex items-center gap-2 sm:gap-4">
-            <Link
-              href="/contact"
-              className="group flex items-center gap-1.5 md:gap-2 bg-primary hover:bg-[#35b5b8] text-white px-4 py-2 md:px-6 md:py-2.5 rounded-full font-medium text-xs md:text-sm transition-all shadow-glow-primary hover:-translate-y-0.5"
-            >
-              Contact Us
-              <svg
-                className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            <MagneticWrapper glowColor="primary">
+              <Link
+                href="/contact"
+                className="group flex items-center gap-1.5 md:gap-2 bg-primary hover:bg-[#35b5b8] text-white px-4 py-2 md:px-6 md:py-2.5 rounded-full font-medium text-xs md:text-sm transition-all shadow-glow-primary hover:-translate-y-0.5 block"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
-            </Link>
+                Contact Us
+                <FloatingArrow>
+                  <svg
+                    className="w-3.5 h-3.5 md:w-4 md:h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </FloatingArrow>
+              </Link>
+            </MagneticWrapper>
 
             {/* Hamburger Button */}
             <button

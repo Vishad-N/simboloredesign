@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import FloatingArrow from "@/components/ui/FloatingArrow";
 
 export type GalleryPhoto = {
   title: string;
@@ -73,7 +74,7 @@ export default function PhotoGalleryCard({ photo, index, onOpen }: PhotoGalleryC
           {photo.title}
         </span>
         <span className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-white/82">
-          View frame <span aria-hidden="true">&rarr;</span>
+          View frame <FloatingArrow />
         </span>
       </span>
     </motion.button>
