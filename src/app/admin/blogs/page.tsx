@@ -3,6 +3,8 @@ import { prisma } from "@/lib/prisma";
 import { PlusCircle, Edit } from "lucide-react";
 import DeleteBlogButton from "@/components/admin/DeleteBlogButton";
 
+export const dynamic = 'force-dynamic';
+
 export default async function AdminBlogsPage() {
   const blogs = await prisma.post.findMany({
     orderBy: { createdAt: "desc" },

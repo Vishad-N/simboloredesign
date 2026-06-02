@@ -14,8 +14,7 @@ export default function SignOutButton() {
       await fetch("/api/auth/logout", {
         method: "POST",
       });
-      router.push("/");
-      router.refresh();
+      window.location.href = "/";
     } catch (error) {
       console.error("Logout failed", error);
       setLoading(false);

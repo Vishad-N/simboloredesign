@@ -2,6 +2,8 @@ import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { FileText, PlusCircle } from "lucide-react";
 
+export const dynamic = 'force-dynamic';
+
 export default async function AdminDashboard() {
   const totalBlogs = await prisma.post.count();
   const publishedBlogs = await prisma.post.count({ where: { published: true } });
