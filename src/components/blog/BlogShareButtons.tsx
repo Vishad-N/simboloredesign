@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function BlogShareButtons({
   title,
@@ -10,7 +10,15 @@ export default function BlogShareButtons({
   slug: string;
 }) {
   const [copied, setCopied] = useState(false);
-  const url = typeof window !== "undefined" ? `${window.location.origin}/blog/${slug}` : `/blog/${slug}`;
+  const [origin, setOrigin] = useState("");
+
+  useEffect(() => {
+    setOrigin(window.location.origin);
+  }, []);
+
+  // Using origin or an empty string prevents hydration mismatches. 
+  // It will update to the absolute URL immediately after mounting.
+  const url = origin ? `${origin}/blog/${slug}` : `/blog/${slug}`;
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
 

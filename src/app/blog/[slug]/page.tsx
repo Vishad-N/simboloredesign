@@ -4,7 +4,7 @@ import BlogContent from "@/components/blog/BlogContent";
 import BlogAuthor from "@/components/blog/BlogAuthor";
 import BlogShareButtons from "@/components/blog/BlogShareButtons";
 import RelatedPosts from "@/components/blog/RelatedPosts";
-import { blogPosts, getPostBySlug, getRelatedPosts } from "@/data/blogs";
+import { prisma } from "@/lib/prisma";
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -12,74 +12,99 @@ interface BlogPostPageProps {
   }>;
 }
 
-export function generateStaticParams() {
-  return Object.keys(blogPosts).map((slug) => ({ slug }));
-}
-
 export async function generateMetadata({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const dbPost = await prisma.post.findUnique({
+    where: { slug },
+  });
 
-  if (!post) {
+  if (!dbPost || !dbPost.published) {
     return { title: "Post Not Found | Simbolo" };
   }
 
   return {
-    title: `${post.title} | Simbolo Blog`,
-    description: post.excerpt,
-    keywords: post.tags,
+    title: dbPost.seoTitle || `${dbPost.title} | Simbolo Blog`,
+    description: dbPost.seoDescription || dbPost.excerpt,
+    keywords: JSON.parse(dbPost.tags),
     openGraph: {
-      title: post.title,
-      description: post.excerpt,
+      title: dbPost.seoTitle || dbPost.title,
+      description: dbPost.seoDescription || dbPost.excerpt,
       type: "article",
-      publishedTime: post.publishDate,
-      authors: [post.author.name],
+      publishedTime: dbPost.publishDate.toISOString(),
+      authors: [dbPost.authorName],
       images: [
         {
-          url: post.coverImage,
+          url: dbPost.coverImage,
           width: 1200,
           height: 630,
-          alt: post.title,
+          alt: dbPost.title,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
-      description: post.excerpt,
-      images: [post.coverImage],
+      title: dbPost.seoTitle || dbPost.title,
+      description: dbPost.seoDescription || dbPost.excerpt,
+      images: [dbPost.coverImage],
     },
   };
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const dbPost = await prisma.post.findUnique({
+    where: { slug },
+  });
 
-  if (!post) {
+  if (!dbPost || !dbPost.published) {
     notFound();
   }
 
-  const relatedPosts = getRelatedPosts(post.relatedSlugs);
+  // Format author to match existing component props
+  const author = {
+    name: dbPost.authorName,
+    avatar: "/assets/logo1.png",
+    role: dbPost.authorRole,
+  };
+
+  const relatedSlugs = JSON.parse(dbPost.relatedSlugs) as string[];
+  const dbRelatedPosts = await prisma.post.findMany({
+    where: { 
+      slug: { in: relatedSlugs },
+      published: true 
+    }
+  });
+
+  const relatedPosts = dbRelatedPosts.map(post => ({
+    ...post,
+    publishDate: post.publishDate.toISOString(),
+    author: {
+      name: post.authorName,
+      avatar: "/assets/logo1.png",
+      role: post.authorRole,
+    },
+    tags: JSON.parse(post.tags),
+    relatedSlugs: JSON.parse(post.relatedSlugs),
+  }));
 
   return (
     <main className="min-h-screen bg-bglight">
       <BlogDetailHero
-        title={post.title}
-        category={post.category}
-        coverImage={post.coverImage}
-        publishDate={post.publishDate}
-        readingTime={post.readingTime}
-        author={post.author}
+        title={dbPost.title}
+        category={dbPost.category}
+        coverImage={dbPost.coverImage}
+        publishDate={dbPost.publishDate.toISOString()}
+        readingTime={dbPost.readingTime}
+        author={author}
       />
 
-      <BlogContent blocks={post.content} />
+      <BlogContent content={dbPost.content} />
 
-      <BlogShareButtons title={post.title} slug={post.slug} />
+      <BlogShareButtons title={dbPost.title} slug={dbPost.slug} />
 
-      <BlogAuthor author={post.author} />
+      <BlogAuthor author={author} />
 
-      <RelatedPosts posts={relatedPosts} />
+      <RelatedPosts posts={relatedPosts as any} />
     </main>
   );
 }

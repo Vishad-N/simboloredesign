@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { Lock } from "lucide-react";
 
 export default function BlogHero() {
   return (
@@ -49,6 +51,21 @@ export default function BlogHero() {
           Discover expert articles on design, branding, digital marketing, and
           the creative strategies shaping the future of visual storytelling.
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
+          className="mt-8 flex justify-center"
+        >
+          <Link 
+            href="/admin" 
+            className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white/50 px-3 py-1.5 text-xs font-medium text-gray-500 hover:border-primary/30 hover:bg-white hover:text-primary transition-all shadow-sm backdrop-blur-sm"
+          >
+            <Lock size={12} />
+            Admin Login
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

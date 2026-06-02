@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Post {
+  id               String   @id @default(cuid())
+  slug             String   @unique
+  title            String
+  category         String
+  excerpt          String
+  coverImage       String
+  publishDate      DateTime @default(now())
+  readingTime      String   @default("5 min read")
+  
+  // Author fields
+  authorName       String   @default("Simbolo Team")
+  authorAvatar     String   @default("https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=120&q=80")
+  authorRole       String   @default("Creative Director")
+  
+  // Content (Rich text HTML)
+  content          String
+  
+  // Stored as JSON string
+  tags             String   @default("[]") 
+  relatedSlugs     String   @default("[]")
+  
+  // SEO
+  seoTitle         String?
+  seoDescription   String?
+  
+  // Status
+  published        Boolean  @default(false)
+  
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model Category {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  createdAt DateTime @default(now())
+}
