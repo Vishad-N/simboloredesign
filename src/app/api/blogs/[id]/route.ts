@@ -5,10 +5,11 @@ export const dynamic = 'force-dynamic';
 
 export async function PUT(
   request: Request,
-  { params }: { params: Promise<{ id: string }> }
+  context: any
 ) {
   try {
-    const { id } = await params;
+    const params = await context.params;
+    const id = params.id;
     const data = await request.json();
 
     if (!data.title || !data.slug || !data.content) {
@@ -57,10 +58,11 @@ export async function PUT(
 
 export async function DELETE(
   request: Request,
-  { params }: { params: Promise<{ id: string }> }
+  context: any
 ) {
   try {
-    const { id } = await params;
+    const params = await context.params;
+    const id = params.id;
     await prisma.post.delete({ where: { id } });
     return NextResponse.json({ success: true });
   } catch (error: any) {
