@@ -4,6 +4,7 @@ export type ServiceData = {
   shortDescription: string;
   icon: string;
   overview: string;
+  heroImage?: string;
   benefits: ({ title: string; description: string } | string)[];
   process: { step: string; title: string; description: string }[];
   caseStudy: { title: string; result: string; image: string };
@@ -51,6 +52,7 @@ export const servicesData: ServiceData[] = [
     title: "Professional Video Editing",
     shortDescription: "Cinematic Editing for Impactful Short Form Content.",
     icon: "/video-editing.png",
+    heroImage: "/video editor copy.jpg",
     overview: "Capture your audience's attention instantly with our professional video editing services. From fast-paced Reels editing to premium cinematic editing, we transform raw footage into high-performing short form content.",
     benefits: [
       {
@@ -109,8 +111,9 @@ export const servicesData: ServiceData[] = [
   {
     slug: "digital-marketing",
     title: "Digital Marketing",
-    shortDescription: "Elevate Your Brand with Simbolo Multimedia",
+    shortDescription: "Elevate Your Brand\nwith\nSimbolo\nMultimedia",
     icon: "/social-media.png",
+    heroImage: "/digital marketing copy.jpg",
     overview: "Supercharge your online presence, attract high-quality leads, and convert clicks into loyal customers with our data-driven digital marketing strategies.",
     benefits: [
       {
@@ -147,6 +150,7 @@ export const servicesData: ServiceData[] = [
     title: "Web Development",
     shortDescription: "Build a Stunning Online Home",
     icon: "/web-dev.png",
+    heroImage: "/web development copy.jpg",
     overview: "Turn your website into your 24/7 salesperson. We design beautiful, secure, and fast-loading websites that convert random visitors into paying customers",
     benefits: [
       {
@@ -207,6 +211,7 @@ export const servicesData: ServiceData[] = [
     title: "Motion & Video Editing",
     shortDescription: "Stop Scrolling. Start Engaging",
     icon: "/video-editing.png",
+    heroImage: "/video editor copy.jpg",
     overview: "Bring your brand to life, capture short attention spans, and turn viewers into buyers with high-energy videos and breathtaking motion graphics",
     benefits: [
       {
@@ -291,6 +296,7 @@ export const servicesData: ServiceData[] = [
     title: "E-commerce",
     shortDescription: "Build an Online Store That Sells 24/7",
     icon: "/Ecommerce.png",
+    heroImage: "/e-commerce copy.jpg",
     overview: "Transform your business into a powerful online brand. We don’t just create websites; we build high-converting digital storefronts that make shopping easy for your customers and growing business simple for you. From smooth product displays to secure payment setups, we handle everything.",
     benefits: [
       {
@@ -348,9 +354,10 @@ export const servicesData: ServiceData[] = [
   },
   {
     slug: "brand-identity-design",
-    title: "Brand Identity & Visual Design",
+    title: "Graphic Design",
     shortDescription: "Shape Your Brand's Future.",
     icon: "/product-design.png",
+    heroImage: "/graphic designer copy.jpg",
     overview: "Make an unforgettable first impression, stand out from your competitors, and build deep trust with professional design that tells your unique story.",
     benefits: [
       {

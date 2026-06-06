@@ -88,7 +88,7 @@ export default function Services() {
             Our Services
           </h2>
           <p className="text-soft text-lg">
-            We provide everything you need to grow your brand and succeed online.
+            We provide end-to-end digital solutions to help you succeed online.
           </p>
         </div>
 

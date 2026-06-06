@@ -4,6 +4,7 @@ import Link from "next/link";
 import { getServiceBySlug, servicesData } from "@/data/services";
 import CTA from "@/components/CTA";
 import ServiceAnimatedBackground from "@/components/ServiceAnimatedBackground";
+import ServiceHeroImage from "@/components/ServiceHeroImage";
 import MagneticWrapper from "@/components/ui/MagneticWrapper";
 import FloatingArrow from "@/components/ui/FloatingArrow";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -46,24 +47,29 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
       
       <div className="relative z-10">
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 px-4 md:px-8">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white/60 to-transparent" />
-        <div className="absolute top-20 right-[-10%] -z-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50" />
-        <div className="absolute top-40 left-[-10%] -z-10 w-96 h-96 bg-skyblue/10 rounded-full blur-3xl opacity-50" />
+        <section className={`relative pt-32 pb-20 md:pt-40 md:pb-32 px-4 md:px-8 ${serviceData.heroImage ? 'overflow-hidden' : ''}`}>
+        {!serviceData.heroImage && (
+          <>
+            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white/60 to-transparent" />
+            <div className="absolute top-20 right-[-10%] -z-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50" />
+            <div className="absolute top-40 left-[-10%] -z-10 w-96 h-96 bg-skyblue/10 rounded-full blur-3xl opacity-50" />
+          </>
+        )}
+        {serviceData.heroImage && <ServiceHeroImage image={serviceData.heroImage} />}
         
-        <div className="max-w-[1320px] mx-auto text-center">
+        <div className="max-w-[1320px] mx-auto text-center relative z-10">
           <ScrollReveal direction="left">
             <div className="inline-flex items-center gap-3 bg-white px-4 py-2 rounded-full shadow-sm border border-black/5 mb-8">
               <Image src={serviceData.icon} alt={serviceData.title} width={24} height={24} className="w-6 h-6 object-contain" />
               <span className="text-sm font-bold uppercase tracking-wider text-primary">{serviceData.title}</span>
             </div>
-            <h1 className="font-heading text-5xl md:text-7xl font-extrabold text-dark tracking-tight leading-[1.1] mb-6">
+            <h1 className={`font-heading text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 ${serviceData.heroImage ? 'text-white' : 'text-dark'}`}>
               {serviceData.shortDescription}
             </h1>
           </ScrollReveal>
           
           <ScrollReveal direction="right">
-            <p className="max-w-2xl mx-auto text-lg md:text-xl text-soft leading-relaxed">
+            <p className={`max-w-2xl mx-auto text-lg md:text-xl leading-relaxed ${serviceData.heroImage ? 'text-white/90' : 'text-soft'}`}>
               {serviceData.overview}
             </p>
             <div className="mt-10 flex justify-center">

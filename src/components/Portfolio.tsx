@@ -123,10 +123,10 @@ export default function Portfolio() {
               </button>
             </div>
             <Link
-              href="/projects"
+              href="/portfolio"
               className="flex w-full sm:w-auto justify-center items-center bg-dark hover:bg-black text-white px-6 py-3 rounded-full font-medium transition-all sm:ml-4 text-sm md:text-base shrink-0"
             >
-              View All Projects
+              View Full Portfolio
             </Link>
           </div>
         </div>
