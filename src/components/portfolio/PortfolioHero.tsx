@@ -67,7 +67,7 @@ export default function PortfolioHero() {
               View Portfolio
             </button>
           </MagneticWrapper>
-          <MagneticWrapper glowColor="dark">
+          <MagneticWrapper>
             <Link
               href="/contact"
               className="group flex items-center justify-center gap-2 bg-dark hover:bg-black text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-xl hover:-translate-y-1 w-full sm:w-auto"
