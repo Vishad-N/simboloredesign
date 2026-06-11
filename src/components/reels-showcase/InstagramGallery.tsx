@@ -4,15 +4,15 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Play, X, Loader2, Eye } from "lucide-react";
-import { reelsData, reelsCategories, ReelData } from "@/data/reels";
+import { reelsShowcaseData, reelsCategories, ShowcaseReelData } from "@/data/reelsShowcaseData";
 
-export default function ReelsShowcase() {
+export default function InstagramGallery() {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [selectedReel, setSelectedReel] = useState<ReelData | null>(null);
+  const [selectedReel, setSelectedReel] = useState<ShowcaseReelData | null>(null);
   const [iframeLoaded, setIframeLoaded] = useState(false);
   const [visibleCount, setVisibleCount] = useState(8);
 
-  const filteredReels = reelsData.filter(
+  const filteredReels = reelsShowcaseData.filter(
     (reel) => activeCategory === "All" || reel.category === activeCategory
   );
 
@@ -29,20 +29,20 @@ export default function ReelsShowcase() {
   }, [selectedReel]);
 
   return (
-    <section className="py-24 bg-dark text-white relative overflow-hidden" id="reels">
+    <section className="py-24 bg-dark text-white relative overflow-hidden" id="instagram-gallery">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-[1320px] mx-auto px-4 md:px-8 relative z-10">
         <div className="text-center mb-12">
           <span className="inline-block bg-white/10 text-primary font-bold text-xs px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider backdrop-blur-sm">
-            Video Marketing
+            Instagram Portfolio
           </span>
           <h2 className="font-heading text-4xl md:text-5xl font-extrabold mb-4">
-            Reels & Video Campaigns
+            Our Latest Work
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Short-form content that drives massive engagement, builds brand awareness, and converts viewers into loyal customers.
+            Browse through our extensive gallery of ad films, product shoots, and viral reels.
           </p>
         </div>
 
@@ -66,10 +66,8 @@ export default function ReelsShowcase() {
           ))}
         </div> */}
 
-        <motion.div
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
+        {/* Masonry Layout using CSS Columns */}
+        <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
           <AnimatePresence mode="popLayout">
             {visibleReels.map((reel, index) => (
               <motion.div
@@ -79,14 +77,14 @@ export default function ReelsShowcase() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
-                className="group"
+                className="break-inside-avoid group cursor-pointer"
+                onClick={() => {
+                  setSelectedReel(reel);
+                  setIframeLoaded(false);
+                }}
               >
                 <div
-                  className="relative aspect-[9/16] rounded-[24px] overflow-hidden bg-gray-800 mb-4 shadow-xl border border-white/10 group-hover:border-primary/50 transition-colors duration-300 cursor-pointer"
-                  onClick={() => {
-                    setSelectedReel(reel);
-                    setIframeLoaded(false);
-                  }}
+                  className={`relative w-full rounded-[24px] overflow-hidden bg-gray-800 shadow-xl border border-white/10 group-hover:border-primary/50 transition-colors duration-300 ${index % 3 === 0 ? 'aspect-[4/5]' : 'aspect-[9/16]'}`}
                 >
                   <Image
                     src={reel.thumbnail}
@@ -113,27 +111,17 @@ export default function ReelsShowcase() {
                   <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/90 via-black/50 to-transparent transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                     <h4 className="font-bold text-lg mb-1 line-clamp-1">{reel.title}</h4>
                     <p className="text-gray-300 text-xs mb-3 line-clamp-1">{reel.client}</p>
-                    <div className="flex items-center gap-4 text-sm font-medium text-gray-300">
-                      {reel.viewCount && (
-                        <span className="flex items-center gap-1.5"><Eye className="w-4 h-4" /> {reel.viewCount}</span>
-                      )}
-                    </div>
+                    {reel.performanceMetrics?.views && (
+                      <div className="flex items-center gap-4 text-sm font-medium text-gray-300">
+                        <span className="flex items-center gap-1.5"><Eye className="w-4 h-4" /> {reel.performanceMetrics.views}</span>
+                      </div>
+                    )}
                   </div>
                 </div>
-
-                <button
-                  onClick={() => {
-                    setSelectedReel(reel);
-                    setIframeLoaded(false);
-                  }}
-                  className="w-full py-3 rounded-full border border-white/20 hover:bg-white hover:text-dark font-medium transition-colors"
-                >
-                  View Reel
-                </button>
               </motion.div>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </div>
 
         {filteredReels.length === 0 && (
           <div className="text-center py-20">
@@ -216,10 +204,10 @@ export default function ReelsShowcase() {
                 </div>
 
                 <div className="mt-auto pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-4 items-center justify-between">
-                  {selectedReel.viewCount && (
+                  {selectedReel.performanceMetrics?.views && (
                     <div className="flex items-center gap-2 text-gray-300 bg-white/5 px-4 py-3 rounded-xl border border-white/5 w-full sm:w-auto justify-center">
                       <Eye className="w-5 h-5 text-primary" />
-                      <span className="font-semibold">{selectedReel.viewCount} Views</span>
+                      <span className="font-semibold">{selectedReel.performanceMetrics.views} Views</span>
                     </div>
                   )}
 

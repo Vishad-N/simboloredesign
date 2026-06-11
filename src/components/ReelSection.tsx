@@ -76,7 +76,7 @@ export default function ReelSection() {
           </div>
 
           <Link
-            href="#"
+            href="/reels"
             className="group inline-flex w-fit items-center gap-2 rounded-full bg-dark px-6 py-3 font-semibold text-white shadow-[0_18px_40px_-22px_rgba(15,23,42,0.65)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-4 focus-visible:ring-offset-bglight"
           >
             View All Reels

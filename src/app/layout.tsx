@@ -3,6 +3,8 @@ import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import InquiryPopup from "@/components/InquiryPopup";
+import CustomCursor from "@/components/ui/CustomCursor";
+import LoadingScreen from "@/components/LoadingScreen";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -44,12 +46,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${plusJakarta.variable} ${inter.variable} scroll-smooth`}>
       <body className="font-body antialiased selection:bg-primary selection:text-white relative min-h-screen flex flex-col">
+        <LoadingScreen />
         <Navbar />
         <main className="flex-grow flex flex-col">
           {children}
         </main>
         <Footer />
         <InquiryPopup />
+        <CustomCursor />
       </body>
     </html>
   );
