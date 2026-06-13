@@ -4,19 +4,21 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const brands = [
-  { name: "Brand 1", src: "/lgo1.png" }, // Reusing the site logo as placeholder for brands
-  { name: "Brand 2", src: "/lgo2.png" },
-  { name: "Brand 3", src: "/lgo3.png" },
-  { name: "Brand 4", src: "/lgo4.png" },
-  { name: "Brand 5", src: "/lgo5.png" },
-  { name: "Brand 6", src: "/lgo6.png" },
-  { name: "Brand 7", src: "/lgo7.png" },
-  { name: "Brand 8", src: "/lgo8.png" },
-  { name: "Brand 9", src: "/lgo9.png" },
-  { name: "Brand 10", src: "/lgo10.png" },
-  { name: "Brand 11", src: "/lgo11.png" },
-  { name: "Brand 12", src: "/lgo12.png" },
-  { name: "Brand 13", src: "/lgo13.png" },
+  { name: "Brand 1", src: "/brand logos/1.png" }, // Reusing the site logo as placeholder for brands
+  { name: "Brand 2", src: "/brand logos/2.png" },
+  { name: "Brand 3", src: "/brand logos/3.png" },
+  { name: "Brand 4", src: "/brand logos/4.png" },
+  { name: "Brand 5", src: "/brand logos/5.png" },
+  { name: "Brand 6", src: "/brand logos/6.png" },
+  { name: "Brand 7", src: "/brand logos/7.png" },
+  { name: "Brand 8", src: "/brand logos/8.png" },
+  { name: "Brand 9", src: "/brand logos/9.png" },
+  { name: "Brand 10", src: "/brand logos/10.png" },
+  { name: "Brand 11", src: "/brand logos/11.png" },
+  { name: "Brand 12", src: "/brand logos/12.png" },
+  { name: "Brand 13", src: "/brand logos/13.png" },
+  { name: "Brand 14", src: "/brand logos/14.png" },
+  { name: "Brand 15", src: "/brand logos/15.png" },
 ]
 
 export default function TrustedBrandsMarquee() {
@@ -28,9 +30,10 @@ export default function TrustedBrandsMarquee() {
         </h3>
       </div>
 
-      <div className="relative flex overflow-x-hidden group">
-        <div className="flex animate-marquee space-x-16 px-8 items-center">
-          {[...brands, ...brands].map((brand, i) => (
+      <div className="relative flex overflow-hidden group">
+        {/* Track 1 */}
+        <div className="flex animate-marquee shrink-0 items-center gap-16 pr-16">
+          {brands.map((brand, i) => (
             <div key={i} className="flex-shrink-0 relative group/brand cursor-pointer">
               <div className="w-40 h-20 relative opacity-90 hover:opacity-100 transition-all duration-300">
                 <Image
@@ -43,10 +46,12 @@ export default function TrustedBrandsMarquee() {
             </div>
           ))}
         </div>
-        {/* <div className="absolute top-0 animate-marquee2 flex space-x-16 px-8 items-center" aria-hidden="true">
-          {[...brands, ...brands].map((brand, i) => (
+
+        {/* Track 2 (Duplicate for seamless loop) */}
+        <div className="flex animate-marquee shrink-0 items-center gap-16 pr-16" aria-hidden="true">
+          {brands.map((brand, i) => (
             <div key={`dup-${i}`} className="flex-shrink-0 relative group/brand cursor-pointer">
-              <div className="w-32 h-16 relative grayscale opacity-60 group-hover/brand:grayscale-0 group-hover/brand:opacity-100 transition-all duration-300">
+              <div className="w-40 h-20 relative opacity-90 hover:opacity-100 transition-all duration-300">
                 <Image
                   src={brand.src}
                   alt={brand.name}
@@ -56,11 +61,11 @@ export default function TrustedBrandsMarquee() {
               </div>
             </div>
           ))}
-        </div> */}
+        </div>
 
         {/* Gradients for smooth fade out at edges */}
-        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent" />
-        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent" />
+        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent pointer-events-none" />
       </div>
     </section>
   );

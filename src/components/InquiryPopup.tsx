@@ -54,7 +54,7 @@ export default function InquiryPopup() {
     const timer = window.setTimeout(() => {
       window.sessionStorage.setItem(popupSessionKey, "true");
       setIsOpen(true);
-    }, 10000);
+    }, 15000);
 
     return () => window.clearTimeout(timer);
   }, []);
