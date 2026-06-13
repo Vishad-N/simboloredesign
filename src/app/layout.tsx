@@ -20,20 +20,27 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Simbolo | Modern Creative Agency",
+  metadataBase: new URL("https://thesimbolo.com"),
+  title: {
+    default: "The Simbolo | Digital Marketing & Creative Agency",
+    template: "%s | The Simbolo",
+  },
   description:
     "From stunning designs to powerful campaigns, we build digital experiences that drive real results for your brand.",
+  alternates: {
+    canonical: "https://thesimbolo.com",
+  },
   openGraph: {
-    title: "Simbolo | Modern Creative Agency",
+    title: "The Simbolo | Digital Marketing & Creative Agency",
     description: "Premium digital experiences, branding, and conversion-focused campaigns.",
-    url: "https://simbolo.agency",
-    siteName: "Simbolo",
+    url: "https://thesimbolo.com",
+    siteName: "The Simbolo",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Simbolo | Modern Creative Agency",
+    title: "The Simbolo | Digital Marketing & Creative Agency",
     description: "Premium digital experiences, branding, and conversion-focused campaigns.",
   },
 };
@@ -54,6 +61,33 @@ export default function RootLayout({
         <Footer />
         <InquiryPopup />
         <CustomCursor />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "The Simbolo",
+              url: "https://thesimbolo.com",
+              logo: "https://thesimbolo.com/assets/logo1.png",
+              email: "info@thesimbolo.com",
+              telephone: "+91 8982948199",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress:
+                  "1st Floor The Simbolo Multimedia, Plot No. ED/149, Ring Rd, near Khajrana Square, IDA Scheme",
+                addressLocality: "Indore",
+                addressRegion: "Madhya Pradesh",
+                postalCode: "452016",
+                addressCountry: "IN",
+              },
+              sameAs: [
+                "https://www.instagram.com/the_simbolo_",
+                "https://www.linkedin.com/company/thesimbolomultimedia/",
+              ],
+            }),
+          }}
+        />
       </body>
     </html>
   );
