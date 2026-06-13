@@ -10,7 +10,7 @@ import FloatingArrow from "@/components/ui/FloatingArrow";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Services", href: "/#services" },
+  { label: "Services", href: "/services" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Blog", href: "/blog" },
 ];

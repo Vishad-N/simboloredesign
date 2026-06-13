@@ -12,11 +12,11 @@ export interface ReelData {
 export const reelsData: ReelData[] = [
   {
     id: 1,
-    title: "Summer Collection Teaser",
-    client: "Urban Wear",
+    title: "Ai Ads",
+    client: "Re-coco Innovations",
     category: "Ads",
-    instagramUrl: "https://www.instagram.com/reel/DY4lO5nEZYU/",
-    thumbnail: "/content.jpg",
+    instagramUrl: "https://www.instagram.com/reel/DYj-pQ7j3xX/",
+    thumbnail: "/thumbnail/reelP1.png",
     viewCount: "85K",
     description: "High-energy teaser for the latest summer clothing line."
   },
@@ -26,7 +26,7 @@ export const reelsData: ReelData[] = [
     client: "Creative Studio",
     category: "Reels",
     instagramUrl: "https://www.instagram.com/p/DYjicvMtYS_/",
-    thumbnail: "/graphic-design.jpg",
+    thumbnail: "/thumbnail/reelP2.png",
     viewCount: "45K",
     description: "A sneak peek into our creative process."
   },
@@ -36,17 +36,17 @@ export const reelsData: ReelData[] = [
     client: "Pushp",
     category: "Product Shoots",
     instagramUrl: "https://www.instagram.com/reel/DHImM6gIzNa/",
-    thumbnail: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    thumbnail: "/thumbnail/reelP3.png",
     viewCount: "210K",
     description: "Detailed product shoot highlighting the smartwatch features."
   },
   {
     id: 4,
     title: "Brand Anthem",
-    client: "Re-coco Innovations",
+    client: "Kwality Sweets",
     category: "Brand Films",
-    instagramUrl: "https://www.instagram.com/reel/DZPpiNYAGmH/",
-    thumbnail: "/content.jpg",
+    instagramUrl: "https://www.instagram.com/reel/DYgqP3UCQk3/",
+    thumbnail: "/thumbnail/reelP4.png",
     viewCount: "500K",
     description: "A cinematic film showcasing the brand's core values."
   },

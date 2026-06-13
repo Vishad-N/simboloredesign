@@ -36,6 +36,7 @@ export default function FeaturedCampaigns() {
                   src={campaign.thumbnail}
                   alt={campaign.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />

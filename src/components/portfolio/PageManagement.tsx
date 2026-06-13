@@ -12,7 +12,7 @@ const pages = [
     followers: "18.6K",
     reach: "1.2M",
     image: "/ip1.png",
-    logo: "/lgo14.jpg",
+    logo: "/brand logos/15.png",
     link: "https://www.instagram.com/shreeji_corp30/",
   },
   {
@@ -22,7 +22,7 @@ const pages = [
     followers: "5K",
     reach: "850K",
     image: "/ip2.png",
-    logo: "/lgo13.png",
+    logo: "/brand logos/14.png",
     link: "https://www.instagram.com/recoco_innovations/",
   },
   {
@@ -32,7 +32,7 @@ const pages = [
     followers: "3K",
     reach: "3.5M",
     image: "/ip3.png",
-    logo: "/lgo11.png",
+    logo: "/brand logos/12.png",
     link: "https://www.instagram.com/ariesindiaresearch/",
   },
   {
@@ -42,7 +42,7 @@ const pages = [
     followers: "1K",
     reach: "500K",
     image: "/ip4.png",
-    logo: "/lgo12.png",
+    logo: "/brand logos/13.png",
     link: "https://www.instagram.com/prathamveda_/",
   }
 ];

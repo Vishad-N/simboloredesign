@@ -11,7 +11,7 @@ const reels: Reel[] = [
     category: "Hospitality",
     views: "1.8M",
     likes: "92K",
-    image: "/ree1-new.jpg",
+    image: "/thumbnail/reelH1.jpeg",
     videoUrl: "/reel1.mp4?v=2",
   },
   {
@@ -19,7 +19,7 @@ const reels: Reel[] = [
     category: "Product",
     views: "846K",
     likes: "41K",
-    image: "/ree2-new.jpg",
+    image: "/thumbnail/reelH2.jpg",
     videoUrl: "/reel2.mp4?v=2",
   },
   {

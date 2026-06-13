@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import FloatingArrow from "@/components/ui/FloatingArrow";
 
-const services = [
+export const services = [
   {
     number: "01",
     slug: "digital-marketing",

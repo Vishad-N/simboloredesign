@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const quickLinks = [
   { label: "About Us", href: "/#contact" },
-  { label: "Services", href: "/#services" },
+  { label: "Services", href: "/services" },
   { label: "Portfolio", href: "/#portfolio" },
   { label: "Blog Insights", href: "/blog" },
   { label: "Contact", href: "/contact" },

@@ -54,13 +54,13 @@ export const metricsData = [
 export const reelsShowcaseData: ShowcaseReelData[] = [
   {
     id: 1,
-    title: "Summer Collection Teaser",
-    client: "Urban Wear",
+    title: "Ai ads",
+    client: "PrathamVeda",
     category: "Ads",
-    instagramUrl: "https://www.instagram.com/reel/C_X3451J_4h/",
-    thumbnail: "/content.jpg",
+    instagramUrl: "https://www.instagram.com/reel/DYpElTNCFW8/",
+    thumbnail: "/thumbnail/reelS1.png",
     description: "High-energy teaser for the latest summer clothing line.",
-    industryTag: "Fashion & Lifestyle",
+    industryTag: "Ayurveda & wellness",
     performanceMetrics: {
       views: "2.4M",
       reach: "150K",
@@ -81,12 +81,12 @@ export const reelsShowcaseData: ShowcaseReelData[] = [
   {
     id: 2,
     title: "Brand Anthem",
-    client: "Eco Lifestyle",
+    client: "Aries India",
     category: "Brand Films",
-    instagramUrl: "https://www.instagram.com/reel/C-t093WJ_4h/",
-    thumbnail: "/product-photography.jpg",
+    instagramUrl: "https://www.instagram.com/p/DYpJup9geR3/",
+    thumbnail: "/thumbnail/reelS2.png",
     description: "A cinematic film showcasing the brand's core values.",
-    industryTag: "Corporate Branding",
+    industryTag: "Marketing Research",
     performanceMetrics: {
       views: "1.2M",
       reach: "800K",
@@ -108,10 +108,10 @@ export const reelsShowcaseData: ShowcaseReelData[] = [
   {
     id: 3,
     title: "Restaurant Launch Campaign",
-    client: "Gourmet Bites",
+    client: "Shree Sweets",
     category: "Social Campaigns",
-    instagramUrl: "https://www.instagram.com/reel/C_X3451J_4h/",
-    thumbnail: "/graphic-design.jpg",
+    instagramUrl: "https://www.instagram.com/reel/DYq8fxSsyIc/",
+    thumbnail: "/thumbnail/reelS3.png",
     description: "A mouth-watering launch campaign for a new fine-dining experience.",
     industryTag: "Food & Restaurants",
     performanceMetrics: {
@@ -123,40 +123,40 @@ export const reelsShowcaseData: ShowcaseReelData[] = [
   },
   {
     id: 4,
-    title: "Luxury Condo Tour",
-    client: "Skyline Properties",
+    title: "Fitness Results",
+    client: "Shape and Shine",
     category: "Reels",
-    instagramUrl: "https://www.instagram.com/reel/C-t093WJ_4h/",
-    thumbnail: "/content.jpg",
-    description: "An immersive reel touring a luxury penthouse in downtown.",
-    industryTag: "Real Estate"
+    instagramUrl: "https://www.instagram.com/reel/DZaAd7xsj7K/",
+    thumbnail: "/thumbnail/reelS4.png",
+    description: "An immersive reel showcasing the fitness transformation of a client.",
+    industryTag: "Fitness & Wellness"
   },
   {
     id: 5,
-    title: "Smartwatch Showcase",
-    client: "TechLife",
+    title: "Lamp Showcase",
+    client: "Recoco Innovations",
     category: "Product Shoots",
-    instagramUrl: "https://www.instagram.com/reel/C_X3451J_4h/",
-    thumbnail: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    instagramUrl: "https://www.instagram.com/reel/DY62cmhNv_7/",
+    thumbnail: "/thumbnail/reelS5.png",
     description: "Detailed product shoot highlighting the smartwatch features."
   },
   {
     id: 6,
-    title: "Clinic Facility Overview",
-    client: "CarePlus",
+    title: "Lawyer Video Ad",
+    client: "Paramount Legal",
     category: "Brand Films",
-    instagramUrl: "https://www.instagram.com/reel/C-t093WJ_4h/",
-    thumbnail: "/graphic-design.jpg",
+    instagramUrl: "https://www.instagram.com/p/DZem9DYjoI4/",
+    thumbnail: "/thumbnail/reelS6.png",
     description: "A professional and welcoming overview of the new healthcare facility.",
-    industryTag: "Healthcare"
+    industryTag: "Legal Services"
   }
 ];
 
 export const clientLogos = [
-  { name: "Brand 1", src: "/lgo1.png", quote: "Increased our ROI by 300%." },
-  { name: "Brand 2", src: "/lgo2.png", quote: "Best creative agency we've worked with." },
-  { name: "Brand 3", src: "/lgo3.png", quote: "Our engagement skyrocketed." },
-  { name: "Brand 4", src: "/lgo4.png", quote: "Consistently delivers high-quality content." },
-  { name: "Brand 5", src: "/lgo5.png", quote: "Helped us rebrand successfully." },
-  { name: "Brand 6", src: "/lgo6.png", quote: "Exceeded all our lead generation goals." },
+  { name: "Brand 1", src: "/brand logos/12.png", quote: "Increased our ROI by 300%." },
+  { name: "Brand 2", src: "/brand logos/11.png", quote: "Best creative agency we've worked with." },
+  { name: "Brand 3", src: "/brand logos/10.png", quote: "Our engagement skyrocketed." },
+  { name: "Brand 4", src: "/brand logos/9.png", quote: "Consistently delivers high-quality content." },
+  { name: "Brand 5", src: "/brand logos/8.png", quote: "Helped us rebrand successfully." },
+  { name: "Brand 6", src: "/brand logos/7.png", quote: "Exceeded all our lead generation goals." },
 ];
