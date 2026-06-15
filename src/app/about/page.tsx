@@ -9,7 +9,7 @@ import CreativeCulture from "@/components/about/CreativeCulture";
 import AboutCTA from "@/components/about/AboutCTA";
 
 export const metadata: Metadata = {
-  title: "About Us | Simbolo Creative Agency",
+  title: "About Us",
   description: "Learn more about Simbolo, a premium digital agency blending creativity, strategy, and innovation to craft cinematic digital journeys.",
 };
 

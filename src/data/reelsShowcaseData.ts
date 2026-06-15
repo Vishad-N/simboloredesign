@@ -129,7 +129,13 @@ export const reelsShowcaseData: ShowcaseReelData[] = [
     instagramUrl: "https://www.instagram.com/reel/DZaAd7xsj7K/",
     thumbnail: "/thumbnail/reelS4.png",
     description: "An immersive reel showcasing the fitness transformation of a client.",
-    industryTag: "Fitness & Wellness"
+    industryTag: "Fitness & Wellness",
+    performanceMetrics: {
+      views: "350K",
+      reach: "100K",
+      engagementRate: "11%",
+      leadsGenerated: "1,200"
+    }
   },
   {
     id: 5,
@@ -138,7 +144,13 @@ export const reelsShowcaseData: ShowcaseReelData[] = [
     category: "Product Shoots",
     instagramUrl: "https://www.instagram.com/reel/DY62cmhNv_7/",
     thumbnail: "/thumbnail/reelS5.png",
-    description: "Detailed product shoot highlighting the smartwatch features."
+    description: "Detailed product shoot highlighting the smartwatch features.",
+    performanceMetrics: {
+      views: "750K",
+      reach: "250K",
+      engagementRate: "11.2%",
+      leadsGenerated: "1,050"
+    }
   },
   {
     id: 6,
@@ -148,7 +160,13 @@ export const reelsShowcaseData: ShowcaseReelData[] = [
     instagramUrl: "https://www.instagram.com/p/DZem9DYjoI4/",
     thumbnail: "/thumbnail/reelS6.png",
     description: "A professional and welcoming overview of the new healthcare facility.",
-    industryTag: "Legal Services"
+    industryTag: "Legal Services",
+    performanceMetrics: {
+      views: "2M",
+      reach: "500K",
+      engagementRate: "12%",
+      leadsGenerated: "1,200"
+    }
   }
 ];
 
