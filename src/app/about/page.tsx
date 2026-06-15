@@ -10,7 +10,7 @@ import AboutCTA from "@/components/about/AboutCTA";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Learn more about Simbolo, a premium digital agency blending creativity, strategy, and innovation to craft cinematic digital journeys.",
+  description: "Learn about The Simbolo, a creative digital marketing and multimedia agency helping businesses scale through innovative branding, content creation, performance marketing, and web development.",
 };
 
 export default function AboutPage() {

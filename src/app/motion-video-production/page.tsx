@@ -11,11 +11,37 @@ import Process from "@/components/services/motion-video-production/Process";
 
 export async function generateMetadata() {
   const serviceData = getServiceBySlug("motion-video-production");
-  if (!serviceData) return { title: "Service Not Found" };
+
+  if (!serviceData) {
+    return {
+      title: "Service Not Found | The Simbolo",
+    };
+  }
+
   return {
-    title: `${serviceData.title} Services | Simbolo Agency`,
-    description: serviceData.overview,
-    openGraph: { title: `${serviceData.title} Services | Simbolo`, description: serviceData.overview, type: "website" },
+    title: "Video Production Services",
+
+    description:
+      "Professional video production services including brand films, commercial shoots, product videos, corporate videos, social media content, and creative storytelling by The Simbolo.",
+
+    alternates: {
+      canonical: "https://thesimbolo.com/motion-video-production",
+    },
+
+    openGraph: {
+      title: "Video Production Services | The Simbolo",
+      description:
+        "Professional video production services including brand films, commercial shoots, product videos, corporate videos, social media content, and creative storytelling.",
+      url: "https://thesimbolo.com/motion-video-production",
+      type: "website",
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: "Video Production Services | The Simbolo",
+      description:
+        "Professional video production services including brand films, commercial shoots, product videos, corporate videos, social media content, and creative storytelling.",
+    },
   };
 }
 
@@ -30,7 +56,7 @@ export default async function MotionVideoProductionPage() {
         <Hero data={serviceData} />
         <Benefits data={serviceData} />
         <Process data={serviceData} />
-        
+
         <ScrollReveal direction="left">
           <CTA />
         </ScrollReveal>

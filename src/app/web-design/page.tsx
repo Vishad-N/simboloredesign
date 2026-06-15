@@ -11,11 +11,37 @@ import Process from "@/components/services/web-design/Process";
 
 export async function generateMetadata() {
   const serviceData = getServiceBySlug("web-design");
-  if (!serviceData) return { title: "Service Not Found" };
+
+  if (!serviceData) {
+    return {
+      title: "Service Not Found | The Simbolo",
+    };
+  }
+
   return {
-    title: `${serviceData.title} Services | Simbolo Agency`,
-    description: serviceData.overview,
-    openGraph: { title: `${serviceData.title} Services | Simbolo`, description: serviceData.overview, type: "website" },
+    title: "Website Design Services",
+
+    description:
+      "Professional website design services focused on user experience, responsive layouts, UI/UX design, landing pages, conversion optimization, and premium digital experiences by The Simbolo.",
+
+    alternates: {
+      canonical: "https://thesimbolo.com/web-design",
+    },
+
+    openGraph: {
+      title: "Website Design Services | The Simbolo",
+      description:
+        "Modern website design, UI/UX design, responsive web experiences, landing pages, and conversion-focused digital solutions.",
+      url: "https://thesimbolo.com/web-design",
+      type: "website",
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: "Website Design Services | The Simbolo",
+      description:
+        "Modern website design, UI/UX design, responsive web experiences, landing pages, and conversion-focused digital solutions.",
+    },
   };
 }
 
@@ -30,7 +56,7 @@ export default async function WebDesignPage() {
         <Hero data={serviceData} />
         <Benefits data={serviceData} />
         <Process data={serviceData} />
-        
+
         <ScrollReveal direction="left">
           <CTA />
         </ScrollReveal>

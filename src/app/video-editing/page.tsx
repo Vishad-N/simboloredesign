@@ -11,11 +11,37 @@ import CaseStudy from "@/components/services/video-editing/CaseStudy";
 
 export async function generateMetadata() {
   const serviceData = getServiceBySlug("video-editing");
-  if (!serviceData) return { title: "Service Not Found" };
+
+  if (!serviceData) {
+    return {
+      title: "Service Not Found | The Simbolo",
+    };
+  }
+
   return {
-    title: `${serviceData.title} Services | Simbolo Agency`,
-    description: serviceData.overview,
-    openGraph: { title: `${serviceData.title} Services | Simbolo`, description: serviceData.overview, type: "website" },
+    title: "Professional Video Editing Services",
+
+    description:
+      "Professional video editing services for brands, businesses, creators, and e-commerce companies. From Instagram Reels and YouTube videos to promotional content, motion graphics, and post-production by The Simbolo.",
+
+    alternates: {
+      canonical: "https://thesimbolo.com/video-editing",
+    },
+
+    openGraph: {
+      title: "Professional Video Editing Services | The Simbolo",
+      description:
+        "Professional video editing services including reels editing, promotional videos, YouTube content, motion graphics, post-production, and branded storytelling.",
+      url: "https://thesimbolo.com/video-editing",
+      type: "website",
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: "Professional Video Editing Services | The Simbolo",
+      description:
+        "Professional video editing services including reels editing, promotional videos, YouTube content, motion graphics, post-production, and branded storytelling.",
+    },
   };
 }
 

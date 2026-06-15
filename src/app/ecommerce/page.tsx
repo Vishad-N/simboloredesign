@@ -11,11 +11,37 @@ import Process from "@/components/services/ecommerce/Process";
 
 export async function generateMetadata() {
   const serviceData = getServiceBySlug("ecommerce");
-  if (!serviceData) return { title: "Service Not Found" };
+
+  if (!serviceData) {
+    return {
+      title: "Service Not Found | The Simbolo",
+    };
+  }
+
   return {
-    title: `${serviceData.title} Services | Simbolo Agency`,
-    description: serviceData.overview,
-    openGraph: { title: `${serviceData.title} Services | Simbolo`, description: serviceData.overview, type: "website" },
+    title: "E-Commerce Development & Marketing Services",
+
+    description:
+      "Scale your online store with e-commerce website development, Shopify solutions, conversion optimization, paid advertising, content marketing, and growth-focused digital strategies by The Simbolo.",
+
+    alternates: {
+      canonical: "https://thesimbolo.com/ecommerce",
+    },
+
+    openGraph: {
+      title: "E-Commerce Development & Marketing Services | The Simbolo",
+      description:
+        "Scale your online store with Shopify development, conversion optimization, paid advertising, content marketing, and growth-focused e-commerce strategies.",
+      url: "https://thesimbolo.com/ecommerce",
+      type: "website",
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: "E-Commerce Development & Marketing Services | The Simbolo",
+      description:
+        "Scale your online store with Shopify development, conversion optimization, paid advertising, content marketing, and growth-focused e-commerce strategies.",
+    },
   };
 }
 
@@ -30,7 +56,7 @@ export default async function EcommercePage() {
         <Hero data={serviceData} />
         <Benefits data={serviceData} />
         <Process data={serviceData} />
-        
+
         <ScrollReveal direction="left">
           <CTA />
         </ScrollReveal>

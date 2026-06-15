@@ -185,11 +185,10 @@ export default function Footer() {
               <button
                 type="submit"
                 disabled={status === "loading" || status === "success"}
-                className={`w-full text-white rounded-xl px-4 py-3 text-sm font-bold transition-all shadow-md flex justify-center items-center ${
-                  status === "success" 
-                    ? "bg-green-500" 
-                    : "bg-dark hover:bg-black hover:shadow-lg disabled:opacity-70"
-                }`}
+                className={`w-full text-white rounded-xl px-4 py-3 text-sm font-bold transition-all shadow-md flex justify-center items-center ${status === "success"
+                  ? "bg-green-500"
+                  : "bg-dark hover:bg-black hover:shadow-lg disabled:opacity-70"
+                  }`}
               >
                 {status === "loading" ? (
                   <svg className="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
@@ -209,7 +208,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-soft font-medium">
 
-          <p>&copy; 2026 Simbolo Agency. All rights reserved.</p>
+          <p>&copy; 2026 The Simbolo. All rights reserved.</p>
 
           <div className="flex gap-6">
             <Link href="#" className="hover:text-dark transition-colors">

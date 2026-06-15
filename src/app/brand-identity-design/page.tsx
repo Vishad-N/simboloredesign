@@ -11,11 +11,37 @@ import Process from "@/components/services/brand-identity-design/Process";
 
 export async function generateMetadata() {
   const serviceData = getServiceBySlug("brand-identity-design");
-  if (!serviceData) return { title: "Service Not Found" };
+
+  if (!serviceData) {
+    return {
+      title: "Service Not Found | The Simbolo",
+    };
+  }
+
   return {
-    title: `${serviceData.title} Services | Simbolo Agency`,
-    description: serviceData.overview,
-    openGraph: { title: `${serviceData.title} Services | Simbolo`, description: serviceData.overview, type: "website" },
+    title: "Brand Identity Design Services",
+
+    description:
+      "Build a memorable brand with logo design, visual identity systems, brand strategy, packaging design, and creative branding solutions by The Simbolo.",
+
+    alternates: {
+      canonical: "https://thesimbolo.com/brand-identity-design",
+    },
+
+    openGraph: {
+      title: "Brand Identity Design Services | The Simbolo",
+      description:
+        "Build a memorable brand with logo design, visual identity systems, brand strategy, packaging design, and creative branding solutions.",
+      url: "https://thesimbolo.com/brand-identity-design",
+      type: "website",
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: "Brand Identity Design Services | The Simbolo",
+      description:
+        "Build a memorable brand with logo design, visual identity systems, brand strategy, packaging design, and creative branding solutions.",
+    },
   };
 }
 
@@ -30,7 +56,7 @@ export default async function BrandIdentityDesignPage() {
         <Hero data={serviceData} />
         <Benefits data={serviceData} />
         <Process data={serviceData} />
-        
+
         <ScrollReveal direction="left">
           <CTA />
         </ScrollReveal>

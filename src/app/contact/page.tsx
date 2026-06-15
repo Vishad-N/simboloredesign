@@ -2,8 +2,29 @@ import type { Metadata } from "next";
 import ContactStrategySection from "@/components/ContactStrategySection";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Simbolo Agency",
-  description: "Get in touch with the Simbolo team to scale your brand with premium digital experiences and campaigns.",
+  title: "Contact Us",
+
+  description:
+    "Get in touch with The Simbolo for digital marketing, branding, web development, social media management, content creation, video production, and business growth solutions.",
+
+  alternates: {
+    canonical: "https://thesimbolo.com/contact",
+  },
+
+  openGraph: {
+    title: "Contact Us | The Simbolo",
+    description:
+      "Get in touch with The Simbolo for digital marketing, branding, web development, social media management, content creation, video production, and business growth solutions.",
+    url: "https://thesimbolo.com/contact",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | The Simbolo",
+    description:
+      "Get in touch with The Simbolo for digital marketing, branding, web development, social media management, content creation, video production, and business growth solutions.",
+  },
 };
 
 export default function ContactPage() {
