@@ -58,10 +58,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: "https://thesimbolo.com/motion-graphics",
             lastModified: new Date(),
         },
-        {
-            url: "https://thesimbolo.com/video-editing",
-            lastModified: new Date(),
-        },
+
         {
             url: "https://thesimbolo.com/product-design",
             lastModified: new Date(),
