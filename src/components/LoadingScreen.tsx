@@ -19,11 +19,25 @@ export default function LoadingScreen() {
   const [phase, setPhase] = useState<0 | 1 | 2>(0);
   const [textIndex, setTextIndex] = useState(0);
   const [isDone, setIsDone] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+
+
+
+  useEffect(() => {
+    const mobile =
+      window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+
+    setIsMobile(mobile);
+    setPhase(mobile ? 2 : 0);
+    setMounted(true);
+  }, []);
 
   // Handle text rotation
   useEffect(() => {
     if (phase !== 1) return;
-    
+
     const interval = setInterval(() => {
       setTextIndex((prev) => {
         if (prev === TEXT_ITEMS.length - 1) {
@@ -34,7 +48,7 @@ export default function LoadingScreen() {
         }
         return prev + 1;
       });
-    }, 1200); // Wait 1.2s per text
+    }, 1200);
 
     return () => clearInterval(interval);
   }, [phase]);
@@ -48,6 +62,7 @@ export default function LoadingScreen() {
     }
   }, [phase]);
 
+  if (!mounted) return null;
   if (isDone) return null;
 
   return (
@@ -62,7 +77,7 @@ export default function LoadingScreen() {
 
       {/* Particle Simulation */}
       <AnimatePresence>
-        {phase === 0 && (
+        {phase === 0 && !isMobile && (
           <motion.div
             key="particles"
             initial={{ opacity: 0 }}
@@ -73,6 +88,7 @@ export default function LoadingScreen() {
             <ParticleLogo
               imageUrl="/assets/logo1.png"
               onComplete={() => setPhase(1)}
+              skipAnimation={isMobile}
             />
           </motion.div>
         )}
@@ -84,10 +100,10 @@ export default function LoadingScreen() {
           <motion.div
             key="glowing-logo"
             initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
-            animate={{ 
-              opacity: phase === 2 ? 0 : 1, 
-              scale: phase === 2 ? 1.5 : 1, 
-              filter: "blur(0px)" 
+            animate={{
+              opacity: phase === 2 ? 0 : 1,
+              scale: phase === 2 ? 1.5 : 1,
+              filter: "blur(0px)"
             }}
             transition={{ duration: 1, ease: "easeOut" }}
             className="relative flex flex-col items-center justify-center z-20"
