@@ -80,6 +80,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date(),
         },
 
+        {
+            url: "https://thesimbolo.com/blog/brand-identity-more-than-logo",
+            lastModified: new Date(),
+        },
+
+        {
+            url: "https://thesimbolo.com/blog/why-video-production-king-of-content",
+            lastModified: new Date(),
+        },
+
+        {
+            url: "https://thesimbolo.com/blog/graphic-design-trends-2026",
+            lastModified: new Date(),
+        },
+
+        {
+            url: "https://thesimbolo.com/blog/building-content-strategy-that-works",
+            lastModified: new Date(),
+        },
+
+        {
+            url: "https://thesimbolo.com/blog/product-photography-tips-drive-conversions",
+            lastModified: new Date(),
+        },
+
+        {
+            url: "https://thesimbolo.com/blog/future-of-3d-cgi-in-digital-marketing",
+            lastModified: new Date(),
+        },
+
+
 
 
 

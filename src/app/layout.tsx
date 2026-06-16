@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import InquiryPopup from "@/components/InquiryPopup";
 import CustomCursor from "@/components/ui/CustomCursor";
 import LoadingScreen from "@/components/LoadingScreen";
+import LoadingProgressIndicator from "@/components/ui/LoadingProgressIndicator";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -61,6 +62,7 @@ export default function RootLayout({
         <Footer />
         <InquiryPopup />
         <CustomCursor />
+        <LoadingProgressIndicator />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
