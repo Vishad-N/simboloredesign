@@ -13,7 +13,7 @@ const quickLinks = [
 ];
 
 const serviceLinks = [
-  { label: "Branding Design", href: "/branding-design" },
+  { label: "Branding Design", href: "/brand-identity-design" },
   { label: "Digital Assets", href: "/digital-assets" },
   { label: "Motion Graphics", href: "/motion-graphics" },
   { label: "UI/UX Design", href: "/ui-ux-design" },

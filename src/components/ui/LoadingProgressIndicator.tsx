@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check } from "lucide-react";
 import { usePathname, useSearchParams } from "next/navigation";
+import { useRef } from "react";
 
 export default function LoadingProgressIndicator() {
   const [isLoading, setIsLoading] = useState(false);
@@ -12,27 +13,35 @@ export default function LoadingProgressIndicator() {
 
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const previousPath = useRef(pathname);
 
   // Handle route change completion
   useEffect(() => {
-    if (isLoading) {
-      // Defer state update to avoid synchronous state update in effect
-      setTimeout(() => {
-        setProgress(100);
-        setIsComplete(true);
-      }, 0);
-
-      const timeout = setTimeout(() => {
-        setIsLoading(false);
-        // Reset state after fade out animation completes
-        setTimeout(() => {
-          setProgress(0);
-          setIsComplete(false);
-        }, 400); 
-      }, 800); // Show checkmark for 800ms before hiding
-
-      return () => clearTimeout(timeout);
+    if (!isLoading) {
+      previousPath.current = pathname;
+      return;
     }
+
+    const routeChanged =
+      previousPath.current !== pathname;
+
+    if (!routeChanged) return;
+
+    previousPath.current = pathname;
+
+    setProgress(100);
+    setIsComplete(true);
+
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+
+      setTimeout(() => {
+        setProgress(0);
+        setIsComplete(false);
+      }, 400);
+    }, 800);
+
+    return () => clearTimeout(timeout);
   }, [pathname, searchParams, isLoading]);
 
   // Intercept link clicks to start loading
@@ -74,7 +83,7 @@ export default function LoadingProgressIndicator() {
   // Fake progress simulation
   useEffect(() => {
     let interval: NodeJS.Timeout;
-    
+
     if (isLoading && progress < 90 && !isComplete) {
       interval = setInterval(() => {
         setProgress((prev) => {
@@ -85,7 +94,7 @@ export default function LoadingProgressIndicator() {
         });
       }, 200);
     }
-    
+
     return () => clearInterval(interval);
   }, [isLoading, progress, isComplete]);
 
