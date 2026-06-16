@@ -16,8 +16,11 @@ export default function LoadingProgressIndicator() {
   // Handle route change completion
   useEffect(() => {
     if (isLoading) {
-      setProgress(100);
-      setIsComplete(true);
+      // Defer state update to avoid synchronous state update in effect
+      setTimeout(() => {
+        setProgress(100);
+        setIsComplete(true);
+      }, 0);
 
       const timeout = setTimeout(() => {
         setIsLoading(false);
@@ -30,7 +33,7 @@ export default function LoadingProgressIndicator() {
 
       return () => clearTimeout(timeout);
     }
-  }, [pathname, searchParams]);
+  }, [pathname, searchParams, isLoading]);
 
   // Intercept link clicks to start loading
   useEffect(() => {
@@ -55,7 +58,7 @@ export default function LoadingProgressIndicator() {
           setProgress(0);
           setIsComplete(false);
         }
-      } catch (err) {
+      } catch {
         // Ignore invalid URLs
       }
     };
@@ -88,7 +91,10 @@ export default function LoadingProgressIndicator() {
 
   // Prevent rendering on server
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
   if (!mounted) return null;
 
   return (

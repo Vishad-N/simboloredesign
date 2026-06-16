@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -62,7 +63,9 @@ export default function RootLayout({
         <Footer />
         <InquiryPopup />
         <CustomCursor />
-        <LoadingProgressIndicator />
+        <Suspense fallback={null}>
+          <LoadingProgressIndicator />
+        </Suspense>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
