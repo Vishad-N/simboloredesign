@@ -8,9 +8,11 @@ import * as THREE from "three";
 function ParticleScene({
   imageUrl,
   onComplete,
+  skipAnimation = false,
 }: {
   imageUrl: string;
   onComplete: () => void;
+  skipAnimation: boolean;
 }) {
   const meshRef = useRef<THREE.InstancedMesh>(null);
   const { viewport } = useThree();
@@ -21,6 +23,11 @@ function ParticleScene({
   } | null>(null);
 
   const [isFormed, setIsFormed] = useState(false);
+  useEffect(() => {
+    if (skipAnimation) {
+      onComplete();
+    }
+  }, [skipAnimation, onComplete]);
 
   // Load and sample the image
   useEffect(() => {
@@ -112,6 +119,7 @@ function ParticleScene({
   const duration = 4.0; // Seconds to form
 
   useFrame((state, delta) => {
+    if(skipAnimation) return;
     if (!meshRef.current || targetPositions.length === 0) return;
 
     timeRef.current += delta;
@@ -191,9 +199,11 @@ function ParticleScene({
 export default function ParticleLogo({
   imageUrl,
   onComplete,
+  skipAnimation=false,
 }: {
   imageUrl: string;
   onComplete: () => void;
+  skipAnimation?: boolean;
 }) {
   return (
     <div className="absolute inset-0 w-full h-full z-10 pointer-events-none">
@@ -201,7 +211,7 @@ export default function ParticleLogo({
         {/* Soft ambient lighting, though basic material doesn't use it, 
             it's good if we switch to standard materials */}
         <ambientLight intensity={0.5} />
-        <ParticleScene imageUrl={imageUrl} onComplete={onComplete} />
+        <ParticleScene imageUrl={imageUrl} onComplete={onComplete} skipAnimation={skipAnimation} />
       </Canvas>
     </div>
   );

@@ -25,7 +25,7 @@ export default function Hero({ data }: { data: ServiceData }) {
           </div>
           <h1 className="font-heading text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 text-dark max-w-4xl">
             Elevate Your Brand<br />
-            with Simbolo<br />
+            withSimbolo<br />
             Multimedia
           </h1>
         </ScrollReveal>

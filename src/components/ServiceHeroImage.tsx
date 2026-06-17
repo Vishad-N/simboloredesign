@@ -9,12 +9,12 @@ export default function ServiceHeroImage({ image, darkOverlay = true, bottomFade
   return (
     <div
       className="absolute inset-0 -z-20 overflow-hidden"
-      onMouseMove={(e) => {
-        const x = (e.clientX / window.innerWidth - 0.5) * 40;
-        const y = (e.clientY / window.innerHeight - 0.5) * 40;
+      // onMouseMove={(e) => {
+      //   const x = (e.clientX / window.innerWidth - 0.5) * 40;
+      //   const y = (e.clientY / window.innerHeight - 0.5) * 40;
 
-        setPosition({ x, y });
-      }}
+      //   setPosition({ x, y });
+      // }}
     >
       <motion.div
         animate={{

@@ -24,7 +24,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://thesimbolo.com"),
   title: {
-    default: "TThe Simbolo | Digital Marketing, Branding & Web Development Agency",
+    default: "The Simbolo | Digital Marketing, Branding & Web Development Agency",
     template: "%s | The Simbolo",
   },
   description:
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     canonical: "https://thesimbolo.com",
   },
   openGraph: {
-    title: "TThe Simbolo | Digital Marketing, Branding & Web Development Agency",
+    title: "The Simbolo | Digital Marketing, Branding & Web Development Agency",
     description: "Premium digital experiences, branding, and conversion-focused campaigns.",
     url: "https://thesimbolo.com",
     siteName: "The Simbolo",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TThe Simbolo | Digital Marketing, Branding & Web Development Agency",
+    title: "The Simbolo | Digital Marketing, Branding & Web Development Agency",
     description: "Premium digital experiences, branding, and conversion-focused campaigns.",
   },
 };
