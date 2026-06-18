@@ -55,7 +55,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${plusJakarta.variable} ${inter.variable} scroll-smooth`}>
       <body className="font-body antialiased selection:bg-primary selection:text-white relative min-h-screen flex flex-col">
-        <LoadingScreen />
+        {/* <LoadingScreen /> */}
         <Navbar />
         <main className="flex-grow flex flex-col">
           {children}
