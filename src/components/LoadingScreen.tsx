@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 import ParticleLogo from "./ParticleLogo";
 import Image from "next/image";
 
@@ -13,6 +14,8 @@ const TEXT_ITEMS = [
 ];
 
 export default function LoadingScreen() {
+  const pathname = usePathname();
+
   // 0: Initial/Particles forming
   // 1: Logo formed, glowing
   // 2: Shockwave & Fade out
@@ -30,7 +33,15 @@ export default function LoadingScreen() {
       window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 
     setIsMobile(mobile);
-    setPhase(mobile ? 2 : 0);
+
+    const hasSeenLoading = sessionStorage.getItem("hasSeenLoadingScreen");
+    if (hasSeenLoading) {
+      setIsDone(true);
+    } else {
+      setPhase(mobile ? 2 : 0);
+      sessionStorage.setItem("hasSeenLoadingScreen", "true");
+    }
+    
     setMounted(true);
   }, []);
 
@@ -63,6 +74,7 @@ export default function LoadingScreen() {
   }, [phase]);
 
   if (!mounted) return null;
+  if (pathname?.startsWith("/admin")) return null;
   if (isDone) return null;
 
   return (
