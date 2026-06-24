@@ -27,7 +27,7 @@ const reels: Reel[] = [
     category: "Fashion",
     views: "2.4M",
     likes: "118K",
-    image: "/ree3-new.jpg",
+    image: "/thumbnail/reelH3.jpg",
     videoUrl: "/reel3.mp4?v=2",
   },
   {
@@ -35,7 +35,7 @@ const reels: Reel[] = [
     category: "Campaign",
     views: "674K",
     likes: "36K",
-    image: "/ree4-new.jpg",
+    image: "/thumbnail/reelH4.jpg",
     videoUrl: "/reel4.mp4?v=2",
   },
 ];

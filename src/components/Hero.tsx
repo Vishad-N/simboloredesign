@@ -47,7 +47,7 @@ const floatingIcons = [
     label: "Web Development",
     delay: "0.5s",
     duration: "7.5s",
-    slug: "web-development",
+    slug: "web-design",
     posClass: "top-[58%] left-[88%] sm:top-[64%] sm:left-[82%] lg:top-[68%] lg:left-[77%]",
   },
   {
@@ -209,7 +209,7 @@ export default function Hero() {
                 alt={icon.alt}
                 width={132}
                 height={132}
-                className={`object-contain select-none pointer-events-none ${icon.slug === "web-development" ? "scale-[1.25] lg:scale-[1.05]" : ""
+                className={`object-contain select-none pointer-events-none ${icon.slug === "web-design" ? "scale-[1.25] lg:scale-[1.05]" : ""
                   }`}
               />
             </div>

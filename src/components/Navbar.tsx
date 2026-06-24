@@ -22,22 +22,22 @@ export default function Navbar() {
     <header className="fixed top-4 left-0 w-full z-50 px-4 md:px-8">
       <div className="relative max-w-[1320px] mx-auto">
         <nav className="glass-nav rounded-full px-4 sm:px-6 py-3 md:py-4 flex items-center justify-between shadow-sm relative z-10">
-          <div className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3 group cursor-pointer">
             <Image
               src="/assets/logo1.png"
               alt="Simbolo Logo"
               width={40}
               height={40}
-              className="w-8 h-8 md:w-10 md:h-10 object-contain"
+              className="w-8 h-8 md:w-10 md:h-10 object-contain group-hover:scale-105 transition-transform"
               priority
             />
             <div className="hidden sm:block leading-none">
-              <h1 className="font-heading font-bold text-dark text-base md:text-lg">Simbolo</h1>
+              <h1 className="font-heading font-bold text-dark text-base md:text-lg">The Simbolo</h1>
               <p className="text-[9px] md:text-[10px] text-soft font-medium uppercase tracking-wider">
                 Creative Agency
               </p>
             </div>
-          </div>
+          </Link>
 
           <ul className="hidden lg:flex items-center gap-8 font-medium text-sm text-dark">
             {navLinks.map((link) => (

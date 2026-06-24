@@ -64,7 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date(),
         },
         {
-            url: "https://thesimbolo.com/web-development",
+            url: "https://thesimbolo.com/ui-ux-design",
             lastModified: new Date(),
         },
         {

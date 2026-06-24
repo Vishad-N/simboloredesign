@@ -27,7 +27,7 @@ export default function Home() {
       {/* <Process /> */}
 
       <Testimonials />
-      <Founder />
+      {/* <Founder /> */}
       <CTA />
       <ContactStrategySection />
     </>

@@ -414,8 +414,8 @@ export const servicesData: ServiceData[] = [
     }
   },
   {
-    slug: "web-development",
-    title: "Web Design",
+    slug: "ui-ux-design",
+    title: "UI/UX Design",
     shortDescription: "Frictionless interfaces for maximum engagement.",
     icon: "/web-dev.png",
     overview: "We design modern, intuitive web interfaces and app experiences that prioritize user journey optimization. Our responsive design systems ensure your product looks stunning on every device.",
