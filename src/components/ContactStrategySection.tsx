@@ -29,6 +29,7 @@ const contactDetails = [
     iconPath:
       "M17.66 16.66 13.41 20.9a2 2 0 01-2.82 0l-4.25-4.24a8 8 0 1111.32 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z",
     accent: "text-purple bg-purple/10",
+    subValue: "GST: 23XXXXXXXXXXXXX",
   },
 ];
 
@@ -137,6 +138,11 @@ export default function ContactStrategySection() {
                   <span className="mt-1 block break-words font-heading text-base font-bold text-dark sm:text-lg">
                     {detail.value}
                   </span>
+                  {'subValue' in detail && (
+                    <span className="mt-1 block text-sm font-semibold text-soft">
+                      {detail.subValue}
+                    </span>
+                  )}
                 </span>
               </motion.a>
             ))}

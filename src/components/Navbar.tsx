@@ -11,7 +11,14 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Portfolio", href: "/portfolio" },
+  { 
+    label: "Portfolio", 
+    href: "/portfolio",
+    subLinks: [
+      { label: "Video Editing", href: "/vep" },
+      { label: "Web Development", href: "/wbp" },
+    ]
+  },
   { label: "Blog", href: "/blog" },
 ];
 
@@ -41,13 +48,33 @@ export default function Navbar() {
 
           <ul className="hidden lg:flex items-center gap-8 font-medium text-sm text-dark">
             {navLinks.map((link) => (
-              <li key={link.label}>
+              <li key={link.label} className="relative group">
                 <Link
                   href={link.href}
-                  className="nav-link hover:text-primary transition-colors"
+                  className="nav-link hover:text-primary transition-colors py-2 flex items-center gap-1"
                 >
                   {link.label}
+                  {link.subLinks && (
+                    <svg className="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  )}
                 </Link>
+                {link.subLinks && (
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 translate-y-2 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-300">
+                    <div className="bg-white rounded-2xl shadow-soft border border-gray-100 p-2 min-w-[200px] flex flex-col gap-1">
+                      {link.subLinks.map((subLink) => (
+                        <Link
+                          key={subLink.label}
+                          href={subLink.href}
+                          className="px-4 py-2 hover:bg-gray-50 rounded-xl text-dark hover:text-primary transition-colors whitespace-nowrap"
+                        >
+                          {subLink.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </li>
             ))}
           </ul>
@@ -119,6 +146,20 @@ export default function Navbar() {
                     >
                       {link.label}
                     </Link>
+                    {link.subLinks && (
+                      <div className="bg-gray-50/50 flex flex-col">
+                        {link.subLinks.map(subLink => (
+                          <Link
+                            key={subLink.label}
+                            href={subLink.href}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="block px-10 py-3 text-sm text-soft hover:text-primary transition-colors border-b border-gray-50 last:border-0"
+                          >
+                            {subLink.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </motion.li>
                 ))}
               </ul>

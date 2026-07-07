@@ -7,7 +7,7 @@ import { useState } from "react";
 const quickLinks = [
   { label: "About Us", href: "/#contact" },
   { label: "Services", href: "/services" },
-  { label: "Portfolio", href: "/#portfolio" },
+  { label: "Portfolio", href: "/portfolio" },
   { label: "Blog Insights", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
@@ -18,6 +18,11 @@ const serviceLinks = [
   { label: "Motion Graphics", href: "/motion-graphics" },
   { label: "UI/UX Design", href: "/ui-ux-design" },
   { label: "Image Manipulation", href: "/image-manipulation" },
+];
+
+const portfolioLinks = [
+  { label: "Video Editing", href: "/vep" },
+  { label: "Web Development", href: "/wbp" },
 ];
 
 export default function Footer() {
@@ -41,7 +46,7 @@ export default function Footer() {
     <footer className="bg-white pt-24 pb-8 border-t border-gray-100 relative z-10">
       <div className="max-w-[1320px] mx-auto px-4 md:px-8">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12 mb-16">
 
           {/* Brand */}
           <div className="lg:col-span-2">
@@ -56,7 +61,7 @@ export default function Footer() {
               />
 
               <h2 className="font-heading font-bold text-dark text-2xl">
-                Simbolo
+                The Simbolo
               </h2>
             </div>
 
@@ -149,6 +154,26 @@ export default function Footer() {
 
             <ul className="space-y-4 text-sm font-medium text-soft">
               {serviceLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="hover:text-primary transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Portfolio */}
+          <div>
+            <h4 className="font-heading font-bold text-dark text-lg mb-6">
+              Portfolio
+            </h4>
+
+            <ul className="space-y-4 text-sm font-medium text-soft">
+              {portfolioLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
