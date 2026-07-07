@@ -7,8 +7,7 @@ import { useRef, useState, useEffect } from "react";
 const projects = [
   {
     slug: "3d-visualization-cgi",
-    image:
-      "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "/ow1.png",
     category: "3D Visualization & CGI",
     name: "Luxxor ABK",
     color: "text-primary",
@@ -16,7 +15,7 @@ const projects = [
   },
   {
     slug: "product-photography",
-    image: "/product-photography.jpg",
+    image: "/ow2.png",
     category: "Product Photography",
     name: "LC Gluta Glow",
     color: "text-skyblue",
@@ -24,7 +23,7 @@ const projects = [
   },
   {
     slug: "content-creation-editing",
-    image: "/content.jpg",
+    image: "/ow3.png",
     category: "Content Creation & Editing",
     name: "Educational Series",
     color: "text-purple",
@@ -32,7 +31,7 @@ const projects = [
   },
   {
     slug: "graphic-design-real-estate",
-    image: "/graphic-design.jpg",
+    image: "/ow4.png",
     category: "Graphic Design & Real Estate",
     name: "Eco-Farmhouses",
     color: "text-orange",
