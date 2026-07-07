@@ -1,17 +1,17 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Play, ArrowRight, ArrowUpRight, Video, Mic, MonitorPlay, Sparkles, Cpu, Layers, Film, Type, Wand2, TrendingUp, CheckCircle2, BarChart, Scissors } from "lucide-react";
 import Link from "next/link";
 
 // Reusable fade-in variant
-const fadeInUp = {
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
 };
 
-const staggerContainer = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
