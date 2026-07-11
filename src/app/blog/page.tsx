@@ -52,7 +52,10 @@ export default async function BlogPage() {
     relatedSlugs: JSON.parse(post.relatedSlugs),
   }));
 
-  const categories = dbCategories.map(c => c.name);
+  const uniqueCategories = Array.from(new Set(dbCategories.map(c => c.name)));
+  const categories = uniqueCategories.filter(categoryName => 
+    dbPosts.some(post => post.category === categoryName)
+  );
 
   return (
     <main className="min-h-screen bg-bglight">
