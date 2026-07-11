@@ -8,7 +8,7 @@ export default function CompanyStory() {
     <section className="py-20 md:py-32 relative overflow-hidden bg-white">
       <div className="max-w-[1320px] mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          
+
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -20,11 +20,11 @@ export default function CompanyStory() {
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
               Our Story
             </div>
-            
+
             <h2 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-dark leading-tight mb-6">
               Creative <span className="text-gradient-primary">Ideas</span>, Real Results.
             </h2>
-            
+
             <div className="space-y-6 text-lg text-soft">
               <p>
                 At Simbolo Multimedia Agency, we turn your creative ideas into digital reality. As a full-service creative agency, we help brands stand out by designing everything from scratch. We craft unique logos, solid brand guidelines, and premium print materials like business cards, corporate stationery, and massive outdoor hoardings. Whether offline or online, we make sure your brand looks professional, consistent, and unforgettable.
@@ -36,7 +36,7 @@ export default function CompanyStory() {
                 What truly sets us apart is our advanced visual storytelling. We bring concepts to life through expert video editing, 2D/3D animated explainer videos, and dynamic motion posters. We also leverage cutting-edge technology to provide premium product photography styling and stunning, high-resolution 8K AI-enhanced artwork. From startups to big enterprises, Simbolo is your ultimate all-in-one partner for world-class design, modern technology, and powerful marketing.
               </p>
             </div>
-            
+
             <div className="mt-10 grid grid-cols-2 gap-8 pt-10 border-t border-gray-100">
               <div>
                 <h4 className="font-heading font-bold text-dark text-xl mb-2">Our Vision</h4>
@@ -67,7 +67,7 @@ export default function CompanyStory() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark/40 to-transparent"></div>
             </motion.div>
-            
+
             {/* Floating Element */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -90,7 +90,7 @@ export default function CompanyStory() {
               <p className="text-sm text-soft leading-relaxed">Focused on creating the best digital experiences.</p>
             </motion.div>
           </div>
-          
+
         </div>
       </div>
     </section>

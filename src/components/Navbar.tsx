@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import MagneticWrapper from "@/components/ui/MagneticWrapper";
 import FloatingArrow from "@/components/ui/FloatingArrow";
@@ -24,6 +25,11 @@ const navLinks = [
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
 
   return (
     <header className="fixed top-4 left-0 w-full z-50 px-4 md:px-8">

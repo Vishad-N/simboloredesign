@@ -6,6 +6,7 @@ import BlogShareButtons from "@/components/blog/BlogShareButtons";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 import { prisma } from "@/lib/prisma";
 
+export const dynamic = 'force-dynamic';
 interface BlogPostPageProps {
   params: Promise<{
     slug: string;

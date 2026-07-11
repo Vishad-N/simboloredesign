@@ -112,7 +112,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
 
 
-
-
+        {
+            url: "https://thesimbolo.com/blog/best-digital-marketing-agency-in-indore",
+            lastModified: new Date(),
+        },
+        {
+            url: "https://thesimbolo.com/blog/website-development-cost-in-india",
+            lastModified: new Date(),
+        },
+        {
+            url: "https://thesimbolo.com/blog/top-10-branding-mistakes-startups-make",
+            lastModified: new Date(),
+        },
+        {
+            url: "https://thesimbolo.com/blog/how-to-increase-ecommerce-sales-using-product-videos",
+            lastModified: new Date(),
+        },
     ];
 }

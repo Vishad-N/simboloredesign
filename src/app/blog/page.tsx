@@ -3,6 +3,7 @@ import BlogHero from "@/components/blog/BlogHero";
 import BlogGrid from "@/components/blog/BlogGrid";
 import { prisma } from "@/lib/prisma";
 
+export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: "Blog & Insights",
 

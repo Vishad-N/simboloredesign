@@ -4,11 +4,11 @@ import SignOutButton from "@/components/admin/SignOutButton";
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-[calc(100vh-88px)] md:min-h-[calc(100vh-104px)] mt-[88px] md:mt-[104px] bg-gray-50 flex">
+    <div className="min-h-screen bg-gray-50 flex">
       {/* Sidebar */}
-      <aside className="w-64 bg-white border-r border-gray-200 flex flex-col hidden md:flex sticky top-[104px] h-[calc(100vh-104px)]">
-        <div className="p-6 border-b border-gray-200">
-          <h1 className="font-heading text-2xl font-bold text-dark">Simbolo CMS</h1>
+      <aside className="w-64 bg-white border-r border-gray-200 flex flex-col hidden md:flex sticky top-0 h-screen">
+        <div className="h-16 px-6 border-b border-gray-200 flex items-center">
+          <h1 className="font-heading text-xl font-bold text-dark">Simbolo CMS</h1>
         </div>
 
         <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
@@ -39,7 +39,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
       {/* Main Content Area */}
       <main className="flex-1 flex flex-col min-w-0">
-        <header className="bg-white border-b border-gray-200 h-16 flex items-center justify-between px-6 sticky top-[88px] md:top-[104px] z-30">
+        <header className="bg-white border-b border-gray-200 h-16 flex items-center justify-between px-6 sticky top-0 z-30">
           <div className="font-medium text-gray-800">
             Welcome back, Admin
           </div>
