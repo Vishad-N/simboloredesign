@@ -42,6 +42,7 @@ export default async function BlogPage() {
 
   const posts = dbPosts.map(post => ({
     ...post,
+    category: post.category.trim(),
     publishDate: post.publishDate.toISOString(),
     author: {
       name: post.authorName,
@@ -52,9 +53,9 @@ export default async function BlogPage() {
     relatedSlugs: JSON.parse(post.relatedSlugs),
   }));
 
-  const uniqueCategories = Array.from(new Set(dbCategories.map(c => c.name)));
+  const uniqueCategories = Array.from(new Set(dbCategories.map(c => c.name.trim())));
   const categories = uniqueCategories.filter(categoryName => 
-    dbPosts.some(post => post.category === categoryName)
+    posts.some(post => post.category === categoryName)
   );
 
   return (
