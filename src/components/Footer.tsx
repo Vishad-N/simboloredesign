@@ -242,11 +242,11 @@ export default function Footer() {
           <p>&copy; 2026 The Simbolo. All rights reserved.</p>
 
           <div className="flex gap-6">
-            <Link href="#" className="hover:text-dark transition-colors">
+            <Link href="/privacy-policy" className="hover:text-dark transition-colors">
               Privacy Policy
             </Link>
 
-            <Link href="#" className="hover:text-dark transition-colors">
+            <Link href="/terms-of-service" className="hover:text-dark transition-colors">
               Terms of Service
             </Link>
           </div>
