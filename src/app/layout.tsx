@@ -71,11 +71,13 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "MarketingAgency",
-              "@id": "https://thesimbolo.com/#organization",
+              "@type": "LocalBusiness",
+              "@id": "https://thesimbolo.com/#localbusiness",
               "name": "The Simbolo Multimedia",
               "url": "https://thesimbolo.com/",
-              "telephone": "+91-8982911880",
+              "telephone": "+918982911880",
+              "priceRange": "$$",
+              "description": "The Simbolo Multimedia is a digital marketing agency in Indore offering digital marketing, graphic design, motion and video, web design and e-commerce services.",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "1st Floor, The Simbolo Multimedia, Plot No. ED/149, Ring Rd, near Khajrana Square, IDA, Scheme, Scheme 94 Sector ED",
@@ -96,37 +98,14 @@ export default function RootLayout({
               "openingHoursSpecification": [
                 {
                   "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": "Monday",
-                  "opens": "10:00",
-                  "closes": "19:00"
-                },
-                {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": "Tuesday",
-                  "opens": "10:00",
-                  "closes": "19:00"
-                },
-                {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": "Wednesday",
-                  "opens": "10:00",
-                  "closes": "19:00"
-                },
-                {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": "Thursday",
-                  "opens": "10:00",
-                  "closes": "19:00"
-                },
-                {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": "Friday",
-                  "opens": "10:00",
-                  "closes": "19:00"
-                },
-                {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": "Saturday",
+                  "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                  ],
                   "opens": "10:00",
                   "closes": "19:00"
                 }
@@ -135,43 +114,47 @@ export default function RootLayout({
                 "https://maps.app.goo.gl/qhc1A9qFgtHfNTEB6",
                 "https://www.instagram.com/the_simbolo_/"
               ],
-              "makesOffer": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Digital Marketing"
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Digital Marketing Services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Digital Marketing"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Graphic Design"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Motion and Video"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Web Design"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "E-commerce"
+                    }
                   }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Graphic Design"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Motion & Video"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Web Design"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "E-commerce"
-                  }
-                }
-              ]
+                ]
+              }
             }),
           }}
         />
