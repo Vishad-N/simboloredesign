@@ -33,7 +33,7 @@ export default function CTA() {
             </MagneticWrapper>
             <MagneticWrapper glowColor="primary">
               <a
-                href="tel:+918982948199"
+                href="tel:+918982911880"
                 className="bg-dark/10 hover:bg-dark/20 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center gap-2 whitespace-nowrap block"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

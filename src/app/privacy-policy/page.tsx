@@ -115,7 +115,7 @@ const contactDetails = [
     value:
       "1st Floor, Sahil Regency, The Simbolo Multimedia, Plot No. ED/149, Ring Rd, near Khajrana square, IDA, Scheme, Indore, Madhya Pradesh 452016",
   },
-  { label: "Phone", value: "089829 48199" },
+  { label: "Phone", value: "089829 11880" },
   { label: "Email", value: "thesimbolomultimedia@gmail.com" },
 ];
 
